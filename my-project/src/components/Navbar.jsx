@@ -7,24 +7,22 @@ function Navbar() {
   return (
     <nav className="sticky top-0 z-50 pt-4">
       <div className="max-w-[1265px] mx-auto px-4">
-        {/* 👇 این container اصلی hover */}
+        {/* MAIN CONTAINER */}
         <div
-          onMouseEnter={() => setIsDropdownOpen(true)}
-          onMouseLeave={() => setIsDropdownOpen(false)}
           className={`bg-zinc-900/80 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden transition-all duration-500 ease-in-out ${
             isDropdownOpen
               ? "rounded-[34px] bg-zinc-950"
               : "rounded-[50px] h-[73px]"
           }`}
         >
-          {/* Top Bar */}
+          {/* TOP BAR */}
           <div className="h-[73px] flex items-center justify-between px-8">
-            {/* Logo */}
+            {/* LOGO */}
             <div className="flex items-center">
               <img src={Logo} alt="InnoTech Logo" className="h-9 w-auto" />
             </div>
 
-            {/* Menu */}
+            {/* MENU */}
             <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white/90">
               <a
                 href="#"
@@ -34,17 +32,23 @@ function Navbar() {
                 <span className="text-xs">▼</span>
               </a>
 
-              {/* فقط trigger (دیگه hover روش نیست) */}
-              <button className="hover:text-emerald-400 transition-colors flex items-center gap-1 py-6">
-                What we do
-                <span
-                  className={`text-xs transition-transform duration-300 ${
-                    isDropdownOpen ? "rotate-180" : ""
-                  }`}
-                >
-                  ▼
-                </span>
-              </button>
+              {/* 👇 WRAPPER مهم */}
+              <div
+                className="relative"
+                onMouseEnter={() => setIsDropdownOpen(true)}
+                onMouseLeave={() => setIsDropdownOpen(false)}
+              >
+                <button className="hover:text-emerald-400 transition-colors flex items-center gap-1 py-6">
+                  What we do
+                  <span
+                    className={`text-xs transition-transform duration-300 ${
+                      isDropdownOpen ? "rotate-180" : ""
+                    }`}
+                  >
+                    ▼
+                  </span>
+                </button>
+              </div>
 
               <a href="#" className="hover:text-emerald-400 transition-colors">
                 What we think
@@ -57,7 +61,7 @@ function Navbar() {
               </a>
             </div>
 
-            {/* Right icons */}
+            {/* RIGHT */}
             <div className="flex items-center gap-6 text-white/80">
               <button className="hover:text-emerald-400 transition text-sm flex items-center gap-1">
                 En <span className="text-xs">▼</span>
@@ -71,8 +75,10 @@ function Navbar() {
             </div>
           </div>
 
-          {/* Dropdown */}
+          {/* 👇 DROPDOWN + HOVER ZONE */}
           <div
+            onMouseEnter={() => setIsDropdownOpen(true)}
+            onMouseLeave={() => setIsDropdownOpen(false)}
             className={`px-8 overflow-hidden transition-all duration-500 ease-in-out ${
               isDropdownOpen
                 ? "max-h-[280px] opacity-100 translate-y-0 pb-8"
@@ -80,7 +86,7 @@ function Navbar() {
             }`}
           >
             <div className="grid grid-cols-2 gap-12 pt-2">
-              {/* Left */}
+              {/* LEFT */}
               <div>
                 <p className="text-white/60 text-xs tracking-widest mb-4">
                   Capability:
@@ -117,7 +123,7 @@ function Navbar() {
                 </div>
               </div>
 
-              {/* Right */}
+              {/* RIGHT */}
               <div>
                 <p className="text-white/60 text-xs tracking-widest mb-4">
                   Industry:
