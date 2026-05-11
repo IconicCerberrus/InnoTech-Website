@@ -2,79 +2,151 @@ import {useState} from "react";
 import Logo from "../assets/Frame 154.svg";
 
 function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
     <nav className="sticky top-0 z-50 pt-4">
       <div className="max-w-[1265px] mx-auto px-4">
-        {/* Main Navbar Container - دقیقاً طبق Figma */}
+        {/* 👇 این container اصلی hover */}
         <div
-          className="h-[73px] bg-zinc-900/80 backdrop-blur-2xl border border-white/10 
-                        rounded-[50px] flex items-center justify-between px-8 shadow-2xl"
+          onMouseEnter={() => setIsDropdownOpen(true)}
+          onMouseLeave={() => setIsDropdownOpen(false)}
+          className={`bg-zinc-900/80 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden transition-all duration-500 ease-in-out ${
+            isDropdownOpen
+              ? "rounded-[34px] bg-zinc-950"
+              : "rounded-[50px] h-[73px]"
+          }`}
         >
-          {/* Logo */}
-          <div className="flex items-center">
-            <img src={Logo} alt="InnoTech Logo" className="h-9 w-auto" />
-          </div>
+          {/* Top Bar */}
+          <div className="h-[73px] flex items-center justify-between px-8">
+            {/* Logo */}
+            <div className="flex items-center">
+              <img src={Logo} alt="InnoTech Logo" className="h-9 w-auto" />
+            </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white/90">
-            <div className="relative group">
-              <button className="hover:text-white transition flex items-center gap-1">
+            {/* Menu */}
+            <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white/90">
+              <a
+                href="#"
+                className="hover:text-emerald-400 transition-colors flex items-center gap-1"
+              >
                 Who we are
                 <span className="text-xs">▼</span>
-              </button>
-            </div>
+              </a>
 
-            <div className="relative group">
-              <button className="hover:text-white transition flex items-center gap-1">
+              {/* فقط trigger (دیگه hover روش نیست) */}
+              <button className="hover:text-emerald-400 transition-colors flex items-center gap-1 py-6">
                 What we do
-                <span className="text-xs">▼</span>
+                <span
+                  className={`text-xs transition-transform duration-300 ${
+                    isDropdownOpen ? "rotate-180" : ""
+                  }`}
+                >
+                  ▼
+                </span>
               </button>
+
+              <a href="#" className="hover:text-emerald-400 transition-colors">
+                What we think
+              </a>
+              <a href="#" className="hover:text-emerald-400 transition-colors">
+                INLEARN Academy
+              </a>
+              <a href="#" className="hover:text-emerald-400 transition-colors">
+                INSIGHT Store
+              </a>
             </div>
 
-            <a href="#" className="hover:text-white transition">
-              What we think
-            </a>
-            <a href="#" className="hover:text-white transition">
-              INLEARN Academy
-            </a>
-            <a href="#" className="hover:text-white transition">
-              INSIGHT Store
-            </a>
+            {/* Right icons */}
+            <div className="flex items-center gap-6 text-white/80">
+              <button className="hover:text-emerald-400 transition text-sm flex items-center gap-1">
+                En <span className="text-xs">▼</span>
+              </button>
+              <button className="hover:text-emerald-400 transition text-xl">
+                ☀️
+              </button>
+              <button className="hover:text-emerald-400 transition text-xl">
+                🔍
+              </button>
+            </div>
           </div>
 
-          {/* Right Side */}
-          <div className="flex items-center gap-6 text-white/80">
-            <button className="hover:text-white transition text-sm flex items-center gap-1">
-              En <span className="text-xs">▼</span>
-            </button>
+          {/* Dropdown */}
+          <div
+            className={`px-8 overflow-hidden transition-all duration-500 ease-in-out ${
+              isDropdownOpen
+                ? "max-h-[280px] opacity-100 translate-y-0 pb-8"
+                : "max-h-0 opacity-0 -translate-y-2 pb-0"
+            }`}
+          >
+            <div className="grid grid-cols-2 gap-12 pt-2">
+              {/* Left */}
+              <div>
+                <p className="text-white/60 text-xs tracking-widest mb-4">
+                  Capability:
+                </p>
 
-            <button className="hover:text-white transition text-xl">☀️</button>
-            <button className="hover:text-white transition text-xl">🔍</button>
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-white text-lg font-semibold hover:text-emerald-400 transition-colors">
+                      INCEPTION
+                    </h3>
+                    <p className="text-white/70 text-sm">
+                      Innovation and Technology Management
+                    </p>
+                  </div>
 
-            {/* Mobile Hamburger */}
-            <button
-              className="md:hidden text-2xl hover:text-white transition"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              ☰
-            </button>
+                  <div>
+                    <h3 className="text-white text-lg font-semibold hover:text-emerald-400 transition-colors">
+                      INSIGHT
+                    </h3>
+                    <p className="text-white/70 text-sm">
+                      Science, Technology, Innovation and Market Analytics
+                      Reports
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-white text-lg font-semibold hover:text-emerald-400 transition-colors">
+                      INFINITY
+                    </h3>
+                    <p className="text-white/70 text-sm">
+                      Digital Transformation
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right */}
+              <div>
+                <p className="text-white/60 text-xs tracking-widest mb-4">
+                  Industry:
+                </p>
+
+                <div className="space-y-3 text-white/90">
+                  <p className="hover:text-emerald-400 transition-colors cursor-pointer">
+                    Oil, Gas & Petrochemical
+                  </p>
+                  <p className="hover:text-emerald-400 transition-colors cursor-pointer">
+                    Health
+                  </p>
+                  <p className="hover:text-emerald-400 transition-colors cursor-pointer">
+                    Mining
+                  </p>
+                  <p className="hover:text-emerald-400 transition-colors cursor-pointer">
+                    AI & Digital
+                  </p>
+                  <p className="hover:text-emerald-400 transition-colors cursor-pointer">
+                    Automotive
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden max-w-[1265px] mx-auto mt-3 px-4">
-          <div className="bg-zinc-900/95 backdrop-blur-xl border border-white/10 rounded-3xl p-6 flex flex-col gap-6 text-white">
-            {/* آیتم‌های موبایل بعداً اضافه می‌شود */}
-          </div>
-        </div>
-      )}
     </nav>
   );
 }
-
 
 export default Navbar;
