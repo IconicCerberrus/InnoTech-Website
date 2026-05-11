@@ -1,6 +1,7 @@
 import {useState} from "react";
 import Logo from "../assets/Frame 154.svg";
 
+
 function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
