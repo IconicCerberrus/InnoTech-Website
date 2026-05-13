@@ -17,14 +17,14 @@ function Navbar() {
           }`}
         >
           {/* TOP BAR */}
-          <div className="h-[73px] flex items-center px-5">
-            {/* LEFT LOGO */}
+          <div className="h-[73px] flex items-center px-8">
+            {/* LEFT - LOGO */}
             <div className="flex items-center shrink-0">
               <img src={Logo} alt="InnoTech Logo" className="h-9 w-auto" />
             </div>
 
-            {/* MENU */}
-            <div className="flex items-center ml-auto">
+            {/* CENTER - MENU */}
+            <div className="flex-1 flex justify-center">
               <div className="hidden md:flex items-center gap-10">
                 {/* WHO WE ARE */}
                 <a
@@ -57,7 +57,6 @@ function Navbar() {
                   </button>
                 </div>
 
-                {/* OTHER LINKS */}
                 <a
                   href="#"
                   className="text-white font-['Gotham'] text-base hover:text-emerald-400 transition-colors"
@@ -79,47 +78,47 @@ function Navbar() {
                   INSIGHT Store
                 </a>
               </div>
+            </div>
 
-              {/* RIGHT SIDE */}
-              <div className="flex items-center ml-[116px] pl-10 h-full">
-                {/* LANGUAGE */}
-                <button className="flex items-center gap-1 text-white font-['Gotham'] text-base leading-none hover:text-emerald-400 transition-colors">
-                  <span>En</span>
-                  <img
-                    src={Vector}
-                    alt=""
-                    className="w-[9px] h-[9px] object-contain translate-y-[1px]"
-                  />
-                </button>
+            {/* RIGHT SIDE */}
+            <div className="flex items-center gap-5">
+              {/* LANGUAGE */}
+              <button className="flex items-center gap-1 text-white font-['Gotham'] text-base leading-none hover:text-emerald-400 transition-colors">
+                <span>En</span>
+                <img
+                  src={Vector}
+                  alt=""
+                  className="w-[9px] h-[9px] object-contain translate-y-[1px]"
+                />
+              </button>
 
-                {/* DIVIDER */}
-                <div className="w-[1.5px] h-[21px] bg-white/40 mx-5" />
+              {/* DIVIDER */}
+              <div className="w-[1.5px] h-[21px] bg-white/40" />
 
-                {/* THEME */}
-                <button className="group flex items-center justify-center w-[30px] h-[30px] transition-all duration-300">
-                  <img
-                    src={SunMedium}
-                    alt="Theme"
-                    className="w-[30px] h-[30px] object-contain transition-all duration-300"
-                  />
-                </button>
+              {/* THEME */}
+              <button className="group flex items-center justify-center w-[30px] h-[30px] transition-all duration-300">
+                <img
+                  src={SunMedium}
+                  alt="Theme"
+                  className="w-[30px] h-[30px] object-contain transition-all duration-300"
+                />
+              </button>
 
-                {/* DIVIDER */}
-                <div className="w-px h-[21px] bg-white/40 mx-5" />
+              {/* DIVIDER */}
+              <div className="w-[1.5px] h-[21px] bg-white/40" />
 
-                {/* SEARCH */}
-                <button className="group flex items-center justify-center w-6 h-6 transition-all duration-300">
-                  <img
-                    src={SearchIcon}
-                    alt="Search"
-                    className="w-6 h-6 object-contain transition-all duration-300"
-                  />
-                </button>
-              </div>
+              {/* SEARCH */}
+              <button className="group flex items-center justify-center w-6 h-6 transition-all duration-300">
+                <img
+                  src={SearchIcon}
+                  alt="Search"
+                  className="w-6 h-6 object-contain transition-all duration-300"
+                />
+              </button>
             </div>
           </div>
 
-          {/* DROPDOWN */}
+          {/* DROPDOWN - بدون تغییر */}
           <div
             onMouseEnter={() => setIsDropdownOpen(true)}
             onMouseLeave={() => setIsDropdownOpen(false)}
@@ -135,7 +134,6 @@ function Navbar() {
                 <div className="text-white text-base font-['Gotham']">
                   Capability:
                 </div>
-
                 <div className="w-52 inline-flex flex-col justify-start items-start gap-5">
                   <div className="self-stretch flex flex-col justify-start items-start">
                     <div className="text-white text-base font-normal font-['Gotham'] hover:text-emerald-400 transition-colors cursor-pointer">
@@ -172,24 +170,19 @@ function Navbar() {
                 <div className="text-white text-base font-['Gotham']">
                   Industry:
                 </div>
-
                 <div className="w-52 inline-flex flex-col justify-start items-start gap-5">
                   <div className="text-white text-base font-normal font-['Gotham'] hover:text-emerald-400 transition-colors cursor-pointer">
                     Oil, Gas & Petrochemical
                   </div>
-
                   <div className="text-white text-base font-normal font-['Gotham'] hover:text-emerald-400 transition-colors cursor-pointer">
                     Health
                   </div>
-
                   <div className="text-white text-base font-normal font-['Gotham'] hover:text-emerald-400 transition-colors cursor-pointer">
                     Mining
                   </div>
-
                   <div className="text-white text-base font-normal font-['Gotham'] hover:text-emerald-400 transition-colors cursor-pointer">
                     AI & Digital
                   </div>
-
                   <div className="text-white text-base font-normal font-['Gotham'] hover:text-emerald-400 transition-colors cursor-pointer">
                     Automotive
                   </div>

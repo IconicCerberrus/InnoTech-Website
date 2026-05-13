@@ -2,42 +2,20 @@ import bgImage from "../assets/Firstpagepic.jpg";
 
 function FirstPage() {
   return (
-    <section
-      className="relative w-full overflow-hidden"
-      style={{aspectRatio: "91 / 51"}}
-    >
+    <section className="relative w-full min-h-screen overflow-hidden z-10">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat brightness-125 contrast-110"
         style={{backgroundImage: `url(${bgImage})`}}
       />
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/30" />
-
-      {/* Big Decorative Circle */}
-      <div
-        className="absolute bg-[#D9D9D9] rounded-full -z-10 opacity-20"
-        style={{
-          width: "1006.07px",
-          height: "1006.07px",
-          left: "-120px",
-          top: "-205px",
-        }}
-      />
-
       {/* Glass Card */}
       <div className="absolute z-10" style={{left: "120px", top: "205px"}}>
         <div className="w-[577px] h-[477px] px-[110px] py-16 bg-black/20 backdrop-blur-[3px] border border-white/10 rounded-[40px] flex flex-col overflow-hidden">
-          {/* AI Agent Title - دقیقاً طبق فیگما */}
+          {/* AI Agent Title */}
           <div className="w-64 h-20 relative mb-6">
-            {/* Big Circle */}
             <div className="w-20 h-20 left-0 top-0 absolute rounded-full border-2 border-[#37B478]" />
-
-            {/* Small Green Dot */}
             <div className="w-3 h-3 left-[4.72px] top-[7.08px] absolute bg-[#37B478] rounded-full" />
-
-            {/* AI Agent Text - overlapping the circle */}
             <div className="left-[27px] top-[16px] absolute text-white text-5xl font-bold font-['Gotham'] leading-none">
               AI Agent
             </div>
@@ -61,6 +39,21 @@ function FirstPage() {
 
       {/* Navbar Space */}
       <div className="relative z-20 pt-6 h-full w-full" />
+
+      <div
+        className="bg-black bg-blend-overlay"
+        style={{
+          width: ".66px",
+          height: "817.15px",
+          left: "187px",
+          top: "115px",
+          transform: "rotate(178.04deg)",
+          transformOrigin: "top left",
+          borderRadius: "9999px",
+          opacity: 0.9,
+          zIndex: 5,
+        }}
+      />
     </section>
   );
 }
