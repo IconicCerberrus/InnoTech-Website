@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import FirstPage from "./components/FirstPage";
 import EcosystemSection from "./components/EcosystemSection";
+import LatestNews from "./components/LatestNews";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
       <FirstPage />
       <EcosystemSection />
+      <LatestNews />
     </div>
   );
 }
