@@ -16,7 +16,7 @@ function FirstPage() {
           <div className="w-64 h-20 relative mb-6">
             <div className="w-20 h-20 left-0 top-0 absolute rounded-full border-2 border-[#37B478]" />
             <div className="w-3 h-3 left-[4.72px] top-[7.08px] absolute bg-[#37B478] rounded-full" />
-            <div className="lef t-[27px] top-[16px] absolute text-white text-5xl font-bold font-['Gotham'] leading-none">
+            <div className="lef t-[27px] top-4 absolute text-white text-5xl font-bold font-['Gotham'] leading-none">
               AI Agent
             </div>
           </div>
@@ -28,11 +28,18 @@ function FirstPage() {
           </div>
 
           {/* Read more button and underline */}
+          {/* Read more button and underline */}
           <div className="mt-4">
-            <div className="text-white text-base font-bold font-['Gotham'] hover:text-[#37B478] transition-colors cursor-pointer inline-flex items-center gap-3 group">
-              Read more
-            </div>
-            <div className="w-20 h-0.5 mt-1 bg-[#37B478] rounded-full group-hover:w-24 transition-all duration-300" />
+            <button
+              type="button"
+              onClick={() => {}}
+              className="group flex w-fit flex-col items-start cursor-pointer transition-all duration-300"
+            >
+              <div className="text-white text-base font-bold font-['Gotham'] transition-colors duration-300 group-hover:text-[#37B478]">
+                Read more
+              </div>
+              <div className="mt-1 h-0.5 w-20 rounded-full bg-[#37B478] transition-all duration-300 group-hover:w-24" />
+            </button>
           </div>
         </div>
       </div>

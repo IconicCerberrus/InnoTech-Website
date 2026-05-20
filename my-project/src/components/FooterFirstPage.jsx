@@ -4,7 +4,7 @@ import Instagram from "../assets/Instagram.svg";
 import LinkedIn from "../assets/Linkdin.svg";
 import WhatsApp from "../assets/WhatsApp.svg";
 
-const FooterFirstPage = () => {
+const FooterFirstPage = ({onContactClick}) => {
   return (
     <section className="relative w-full overflow-hidden -mt-30 md:-mt-40 lg:-mt-24 z-20">
       <div className="relative w-full">
@@ -25,6 +25,7 @@ const FooterFirstPage = () => {
           </div>
 
           <button
+            onClick={onContactClick}
             className="px-4 py-2 
              bg-[#22C55E] hover:bg-[#16A34A] 
              text-white text-2xl font-bold 
@@ -38,7 +39,7 @@ const FooterFirstPage = () => {
           </button>
         </div>
 
-        {/* Footer bottom bar */}
+        {/* Footer bottom bar - بدون تغییر */}
         <div className="absolute bottom-0 left-0 right-0 px-6 pb-8 lg:pb-12 lg:px-[145px]">
           <div className="max-w-[1440px] mx-auto">
             <div className="self-stretch inline-flex justify-between items-center w-full">
@@ -48,23 +49,9 @@ const FooterFirstPage = () => {
                   (item, i) => (
                     <div
                       key={i}
-                      className="
-                      relative cursor-pointer px-4 py-1 rounded-full
-                      transition-all duration-300 group
-                      hover:-translate-y-0.5 active:scale-95 overflow-hidden
-                    "
+                      className="relative cursor-pointer px-4 py-1 rounded-full transition-all duration-300 group hover:-translate-y-0.5 active:scale-95 overflow-hidden"
                     >
-                      {/* hover + click pill effect */}
-                      <div
-                        className="
-                        absolute inset-0 bg-green-500 rounded-full
-                        scale-75 opacity-0
-                        transition-all duration-300
-                        group-hover:scale-100 group-hover:opacity-100
-                        active:scale-110 active:opacity-70
-                      "
-                      />
-
+                      <div className="absolute inset-0 bg-green-500 rounded-full scale-75 opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 active:scale-110 active:opacity-70" />
                       <span className="relative z-10 font-['Gotham'] text-base transition-colors duration-300 group-hover:text-white">
                         {item}
                       </span>
@@ -73,7 +60,7 @@ const FooterFirstPage = () => {
                 )}
               </div>
 
-              {/* Right side - social media logos */}
+              {/* Social Media */}
               <div className="flex justify-end items-center gap-5">
                 <div className="size-8 relative cursor-pointer hover:scale-110 transition-transform">
                   <img
@@ -82,7 +69,6 @@ const FooterFirstPage = () => {
                     className="w-full h-full object-contain"
                   />
                 </div>
-
                 <div className="size-8 relative cursor-pointer hover:scale-110 transition-transform">
                   <img
                     src={LinkedIn}
@@ -90,7 +76,6 @@ const FooterFirstPage = () => {
                     className="w-full h-full object-contain"
                   />
                 </div>
-
                 <div className="size-8 relative cursor-pointer hover:scale-110 transition-transform">
                   <img
                     src={WhatsApp}
