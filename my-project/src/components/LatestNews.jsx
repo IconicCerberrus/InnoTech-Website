@@ -21,8 +21,7 @@ function LatestNews() {
 
             {/* HEADLINE text */}
             <div className="max-w-[690px] text-black text-3xl font-medium font-['Gotham'] leading-[1.28]">
-              InnotechCo launches INCEPTION — an AI-powered innovation
-              management system
+              InnotechCo launches regional collaboration with Cleannconnect.ai
             </div>
 
             {/* 32px spacer */}
@@ -31,7 +30,7 @@ function LatestNews() {
             {/* META info (date + read time) */}
             <div className="flex items-center gap-8">
               <div className="text-black text-base font-light font-['Gotham']">
-                November 15, 2025
+                June 1, 2026
               </div>
 
               <div className="text-[#37B478] text-base font-['Gotham']">
@@ -41,10 +40,9 @@ function LatestNews() {
 
             {/* DESCRIPTION text */}
             <div className="mt-10 max-w-[690px] text-black text-base font-medium font-['Gotham'] leading-[1.35]">
-              InnotechCo introduced INCEPTION, a modular innovation management
-              system that helps R&amp;D and strategy teams map their innovation
-              processes, run maturity assessments, and connect AI agents to real
-              business workflows.
+              The partnership ,sparked at ADIPEC 2025, integrates AI-driven <br/>
+              clean tech solutions across regional supply chains, accelerating
+              sustainability and operational efficiency for industrial clients.
             </div>
 
             {/* Exact spacing like Figma */}

@@ -13,20 +13,44 @@ function InnoCard({title, subtitle, items = []}) {
 
   const CurrentIcon = iconMap[title];
 
+  const boldKeywords = [
+    "INCEPTION",
+    "ISO56000 Standard",
+    "ITONICS",
+    "BRIGHTIDEA",
+    "Digital Transformation",
+    "AI Agent",
+    "INSIGHT",
+    "INFINITY",
+    "Patent Landscape",
+    "Market Research Reports",
+    "Opportunity Study",
+    "INLEARN",
+    "3-Minute Insights",
+    "Webinars",
+    "Workshops",
+  ];
+
+  const renderBoldText = (text) => {
+    let formatted = text;
+    boldKeywords.forEach((word) => {
+      const regex = new RegExp(`(${word})`, "g");
+      formatted = formatted.replace(regex, "<strong>$1</strong>");
+    });
+    return formatted;
+  };
+
   return (
     <div
       className="
-        relative -mt-13 
-        w-65 h-95 
+        relative -mt-14 
+        w-65 h-100 
         px-8 py-6 
         rounded-[50px]
         bg-green-500/5 
         border border-green-500/10
         shadow-[inset_1px_-1px_2px_0px_rgba(29,95,63,1.00)]
-        
-        shadow-[0_0_35px_-5px_rgba(55,180,120,0.35),
-                0_0_60px_-10px_rgba(55,180,120,0.25)]
-
+        shadow-[0_0_35px_-5px_rgba(55,180,120,0.35),0_0_60px_-10px_rgba(55,180,120,0.25)]
         inline-flex flex-col justify-start items-center gap-4 
         overflow-hidden flex-shrink-0 cursor-pointer
         transition-all duration-500 ease-out
@@ -34,12 +58,9 @@ function InnoCard({title, subtitle, items = []}) {
         hover:bg-green-500/10
         hover:-translate-y-2
         hover:translate-x-1
-        
         hover:border-emerald-400/40
         hover:ring-1 hover:ring-emerald-400/20
-        hover:shadow-[0_0_30px_-8px_rgba(16,185,129,0.45),
-                     0_0_50px_-12px_rgba(52,211,153,0.25),
-                     inset_1px_-1px_2px_0px_rgba(29,95,63,1.00)]
+        hover:shadow-[0_0_30px_-8px_rgba(16,185,129,0.45),0_0_50px_-12px_rgba(52,211,153,0.25),inset_1px_-1px_2px_0px_rgba(29,95,63,1.00)]
 
         before:absolute before:inset-0 
         before:bg-gradient-to-br 
@@ -63,12 +84,12 @@ function InnoCard({title, subtitle, items = []}) {
             />
           </div>
 
-          {/* TITLE */}
+          {/* TITLE & SUBTITLE */}
           <div className="flex flex-col justify-start items-start">
-            <div className="text-white text-base font-normal font-['Gotham'] leading-none">
-              {title}
-            </div>
-
+            <div
+              className="text-white text-base font-bold font-['Gotham'] leading-none"
+              dangerouslySetInnerHTML={{__html: renderBoldText(title)}}
+            />
             <div className="text-white text-xs font-['Gotham'] mt-1">
               {subtitle}
             </div>
@@ -91,14 +112,18 @@ function InnoCard({title, subtitle, items = []}) {
                 <div className="w-2 h-2 rounded-full border-[0.50px] border-[#37B478]" />
               </div>
 
-              <div className="flex-1 justify-start text-white text-sm font-['Gotham'] whitespace-pre-line">
-                {item.label}
-              </div>
+              <div
+                className="flex-1 justify-start text-white text-sm font-['Gotham'] whitespace-pre-line"
+                dangerouslySetInnerHTML={{__html: renderBoldText(item.label)}}
+              />
             </div>
 
-            <div className="self-stretch text-left text-white text-xs font-light font-['Gotham'] leading-tight whitespace-pre-line">
-              {item.description}
-            </div>
+            <div
+              className="self-stretch text-left text-white text-xs font-light font-['Gotham'] leading-tight whitespace-pre-line"
+              dangerouslySetInnerHTML={{
+                __html: renderBoldText(item.description),
+              }}
+            />
           </div>
         ))}
       </div>

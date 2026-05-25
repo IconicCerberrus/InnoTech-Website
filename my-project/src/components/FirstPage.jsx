@@ -16,18 +16,17 @@ function FirstPage() {
           <div className="w-64 h-20 relative mb-6">
             <div className="w-20 h-20 left-0 top-0 absolute rounded-full border-2 border-[#37B478]" />
             <div className="w-3 h-3 left-[4.72px] top-[7.08px] absolute bg-[#37B478] rounded-full" />
-            <div className="lef t-[27px] top-4 absolute text-white text-5xl font-bold font-['Gotham'] leading-none">
+            <div className="left-[27px] top-4 absolute text-white text-5xl font-bold font-['Gotham'] leading-none">
               AI Agent
             </div>
           </div>
 
           {/* Description text */}
-          <div className="text-white text-2xl font-bold font-['Gotham'] leading-tight mt-6 pr-8">
-            We leverage the advances in disruptive technologies to enhance
-            business.
+          <div className="text-white text-2xl place-self-auto justify-start font-medium font-['Gotham'] leading-tight mt-6 pr-8">
+            We leverage the advances in disruptive technologies to
+            enhance business.
           </div>
 
-          {/* Read more button and underline */}
           {/* Read more button and underline */}
           <div className="mt-4">
             <button
@@ -35,7 +34,7 @@ function FirstPage() {
               onClick={() => {}}
               className="group flex w-fit flex-col items-start cursor-pointer transition-all duration-300"
             >
-              <div className="text-white text-base font-bold font-['Gotham'] transition-colors duration-300 group-hover:text-[#37B478]">
+              <div className="text-white text-base font-normal font-['Gotham'] transition-colors duration-300 group-hover:text-[#37B478]">
                 Read more
               </div>
               <div className="mt-1 h-0.5 w-20 rounded-full bg-[#37B478] transition-all duration-300 group-hover:w-24" />

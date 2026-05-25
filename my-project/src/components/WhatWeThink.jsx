@@ -61,7 +61,7 @@ function HowWeThink() {
         <div className="relative inline-flex items-center gap-3.5">
           <div className="absolute left-[-14px] top-[-19px] size-16 rounded-full border border-[#37B478]" />
           <div className="relative z-10 text-white text-4xl font-normal font-['Gotham']">
-            How we think in
+            What we think
           </div>
         </div>
 
@@ -110,7 +110,7 @@ function HowWeThink() {
 
                 <div className="inline-flex items-center gap-8">
                   <div className="text-white text-base font-light font-['Gotham']">
-                    November 15, 2025
+                    June 1, 2026
                   </div>
                   <div className="text-[#37B478] text-base font-['Gotham']">
                     2 minutes read
@@ -168,7 +168,7 @@ function HowWeThink() {
                   </div>
                   <div className="flex justify-between items-center">
                     <div className="text-white text-base font-light font-['Gotham']">
-                      November 15, 2025
+                      June 1, 2026
                     </div>
                     <div className="text-[#37B478] text-base font-['Gotham']">
                       2 minutes read
@@ -221,7 +221,7 @@ function HowWeThink() {
                   </div>
                   <div className="flex justify-between items-center">
                     <div className="text-white text-base font-light font-['Gotham']">
-                      November 15, 2025
+                      June 1, 2026
                     </div>
                     <div className="text-[#37B478] text-base font-['Gotham']">
                       2 minutes read

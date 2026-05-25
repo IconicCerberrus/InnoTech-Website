@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import FirstPage from "./components/FirstPage";
 import EcosystemSection from "./components/EcosystemSection";
 import LatestNews from "./components/LatestNews";
-import HowWeThink from "./components/HowWeThink";
+import WhatWeThink from "./components/WhatWeThink";
 import Map from "./components/Map";
 import FooterFirstPage from "./components/FooterFirstPage";
 import ContactModal from "./components/ContactModal"; // ← اضافه شد
@@ -17,7 +17,7 @@ function App() {
       <FirstPage />
       <EcosystemSection />
       <LatestNews />
-      <HowWeThink />
+      <WhatWeThink />
       <Map />
 
       <FooterFirstPage onContactClick={() => setIsContactOpen(true)} />

@@ -17,13 +17,13 @@ function Map() {
 
         {/* Main heading */}
         <div className="self-stretch justify-start text-white text-4xl font-normal font-['Gotham']">
-          Choose the Office That Best Serves Your Region
+          Explore our global footprint.
         </div>
 
         {/* Subheading */}
         <div className="self-stretch justify-start text-white text-lg font-light font-['Gotham']">
-          Explore our Middle East footprint and connect directly with the office
-          that can support your needs fastest
+          Explore our global footprint and connect directly with the
+          representative that can support your needs fastest.
         </div>
       </div>
 
