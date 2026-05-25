@@ -10,18 +10,24 @@ function Map() {
         paddingRight: "120px",
       }}
     >
-      {/* Map content */}
+      {/* ================= SECTION HEADER ================= */}
       <div className="self-stretch relative flex flex-col justify-center items-start gap-2 mb-12">
+        {/* Decorative circle */}
         <div className="size-16 left-[-14px] top-[-19px] absolute rounded-full border border-[#37B478]" />
+
+        {/* Main heading */}
         <div className="self-stretch justify-start text-white text-4xl font-normal font-['Gotham']">
           Choose the Office That Best Serves Your Region
         </div>
+
+        {/* Subheading */}
         <div className="self-stretch justify-start text-white text-lg font-light font-['Gotham']">
           Explore our Middle East footprint and connect directly with the office
           that can support your needs fastest
         </div>
       </div>
 
+      {/* ================= MAP IMAGE ================= */}
       <div className="w-full flex justify-center">
         <img
           src={MapImage}

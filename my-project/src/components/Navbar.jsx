@@ -7,17 +7,25 @@ import SearchIcon from "../assets/Search.svg";
 import Vector from "../assets/Vector.svg";
 
 function Navbar() {
+  // Dropdown and search states
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  // Search input and results
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+
+  // Theme state
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  // Check if any expandable section is open
   const isAnyDropdownOpen = isDropdownOpen || isSearchOpen;
 
+  // Refs for navbar and search button
   const navRef = useRef(null);
   const searchButtonRef = useRef(null);
 
+  // Searchable items
   const searchItems = [
     {title: "What we do", type: "Page"},
     {title: "INSIGHT Store", type: "Page"},
@@ -26,8 +34,10 @@ function Navbar() {
     {title: "Market Analytics Report", type: "Report"},
   ];
 
+  // Filter search results based on query
   useEffect(() => {
     const query = searchQuery.trim();
+
     if (!query) {
       setSearchResults([]);
       return;
@@ -36,17 +46,21 @@ function Navbar() {
     const results = searchItems.filter((item) =>
       item.title.toLowerCase().includes(query.toLowerCase()),
     );
+
     setSearchResults(results);
   }, [searchQuery]);
 
+  // Prevent form refresh on submit
   const handleSubmit = (event) => {
     event.preventDefault();
   };
 
+  // Toggle dark/light mode
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
   };
 
+  // Close search dropdown when clicking outside navbar
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -60,6 +74,7 @@ function Navbar() {
     };
 
     document.addEventListener("mousedown", handleClickOutside);
+
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isSearchOpen]);
 
@@ -73,14 +88,14 @@ function Navbar() {
               : "rounded-[50px]"
           }`}
         >
-          {/* TOP BAR */}
+          {/* ================= TOP NAVBAR ================= */}
           <div className="h-[73px] flex items-center px-8">
-            {/* LEFT - LOGO */}
+            {/* ================= LEFT SECTION - LOGO ================= */}
             <div className="flex items-center shrink-0">
               <img src={Logo} alt="InnoTech Logo" className="h-9 w-auto" />
             </div>
 
-            {/* CENTER - MENU */}
+            {/* ================= CENTER SECTION - MENU ================= */}
             <div className="flex-1 flex justify-center">
               <div className="hidden md:flex items-center gap-10">
                 <a
@@ -88,6 +103,8 @@ function Navbar() {
                   className="flex items-center gap-1 text-white font-['Gotham'] text-base hover:text-emerald-400 transition-colors"
                 >
                   <span>Who we are</span>
+
+                  {/* Optional dropdown icon */}
                   <img
                     src={NaN}
                     alt=""
@@ -95,6 +112,7 @@ function Navbar() {
                   />
                 </a>
 
+                {/* What we do dropdown trigger */}
                 <div
                   className="relative"
                   onMouseEnter={() => {
@@ -105,6 +123,7 @@ function Navbar() {
                 >
                   <button className="flex items-center gap-1 text-white font-['Gotham'] text-base hover:text-emerald-400 transition-colors">
                     <span>What we do</span>
+
                     <img
                       src={Vector}
                       alt=""
@@ -121,12 +140,14 @@ function Navbar() {
                 >
                   What we think
                 </a>
+
                 <a
                   href="#"
                   className="text-white font-['Gotham'] text-base hover:text-emerald-400 transition-colors"
                 >
                   INLEARN Academy
                 </a>
+
                 <a
                   href="#"
                   className="text-white font-['Gotham'] text-base hover:text-emerald-400 transition-colors"
@@ -136,10 +157,12 @@ function Navbar() {
               </div>
             </div>
 
-            {/* RIGHT SIDE */}
+            {/* ================= RIGHT SECTION ================= */}
             <div className="flex items-center gap-5">
+              {/* Language switcher */}
               <button className="flex items-center gap-1 text-white font-['Gotham'] text-base leading-none hover:text-emerald-400 transition-colors">
                 <span>En</span>
+
                 <img
                   src={Vector}
                   alt=""
@@ -147,8 +170,10 @@ function Navbar() {
                 />
               </button>
 
+              {/* Divider */}
               <div className="w-[1.5px] h-[21px] bg-white/40" />
 
+              {/* Theme toggle button */}
               <button
                 onClick={toggleTheme}
                 className="group flex items-center justify-center w-[30px] h-[30px] transition-all duration-300 hover:scale-110 active:scale-95"
@@ -165,15 +190,17 @@ function Navbar() {
                 />
               </button>
 
+              {/* Divider */}
               <div className="w-[1.5px] h-[21px] bg-white/40" />
 
-              {/* Search Icon Button - فقط بزرگ شدن آیکون */}
+              {/* Search button */}
               <button
                 ref={searchButtonRef}
                 type="button"
                 onClick={() => {
                   setIsSearchOpen((prev) => !prev);
                   setIsDropdownOpen(false);
+
                   if (!isSearchOpen) {
                     setSearchQuery("");
                   }
@@ -189,7 +216,7 @@ function Navbar() {
             </div>
           </div>
 
-          {/* WHAT WE DO DROPDOWN */}
+          {/* ================= WHAT WE DO DROPDOWN ================= */}
           <div
             onMouseEnter={() => {
               setIsDropdownOpen(true);
@@ -202,17 +229,20 @@ function Navbar() {
                 : "max-h-0 opacity-0 -translate-y-2 pb-0 pt-0"
             }`}
           >
-            {/* محتوای دراپ داون What we do (بدون تغییر) */}
+            {/* Dropdown content */}
             <div className="px-10 flex justify-center items-start gap-28">
+              {/* Capability section */}
               <div className="py-2 flex justify-center items-start gap-12">
                 <div className="text-white text-base font-['Gotham']">
                   Capability:
                 </div>
+
                 <div className="w-52 inline-flex flex-col justify-start items-start gap-5">
                   <div className="self-stretch flex flex-col justify-start items-start">
                     <div className="text-white text-base font-normal font-['Gotham'] hover:text-emerald-400 transition-colors cursor-pointer">
                       INCEPTION
                     </div>
+
                     <div className="self-stretch text-white/70 text-xs font-['Gotham'] leading-5">
                       Innovation and Technology Management
                     </div>
@@ -222,6 +252,7 @@ function Navbar() {
                     <div className="text-white text-base font-normal font-['Gotham'] hover:text-emerald-400 transition-colors cursor-pointer">
                       INSIGHT
                     </div>
+
                     <div className="self-stretch text-white/70 text-xs font-['Gotham'] leading-5">
                       Science, Technology, Innovation and Market Analytics
                       Reports
@@ -232,6 +263,7 @@ function Navbar() {
                     <div className="text-white text-base font-normal font-['Gotham'] hover:text-emerald-400 transition-colors cursor-pointer">
                       INFINITY
                     </div>
+
                     <div className="self-stretch text-white/70 text-xs font-['Gotham'] leading-5">
                       Digital Transformation
                     </div>
@@ -239,23 +271,29 @@ function Navbar() {
                 </div>
               </div>
 
+              {/* Industry section */}
               <div className="py-2 flex justify-center items-start gap-12">
                 <div className="text-white text-base font-['Gotham']">
                   Industry:
                 </div>
+
                 <div className="w-52 inline-flex flex-col justify-start items-start gap-5">
                   <div className="text-white text-base font-normal font-['Gotham'] hover:text-emerald-400 transition-colors cursor-pointer">
                     Oil, Gas & Petrochemical
                   </div>
+
                   <div className="text-white text-base font-normal font-['Gotham'] hover:text-emerald-400 transition-colors cursor-pointer">
                     Health
                   </div>
+
                   <div className="text-white text-base font-normal font-['Gotham'] hover:text-emerald-400 transition-colors cursor-pointer">
                     Mining
                   </div>
+
                   <div className="text-white text-base font-normal font-['Gotham'] hover:text-emerald-400 transition-colors cursor-pointer">
                     AI & Digital
                   </div>
+
                   <div className="text-white text-base font-normal font-['Gotham'] hover:text-emerald-400 transition-colors cursor-pointer">
                     Automotive
                   </div>
@@ -264,7 +302,7 @@ function Navbar() {
             </div>
           </div>
 
-          {/* SEARCH DROPDOWN */}
+          {/* ================= SEARCH DROPDOWN ================= */}
           <div
             className={`overflow-hidden transition-all duration-500 ease-in-out ${
               isSearchOpen
@@ -273,10 +311,12 @@ function Navbar() {
             }`}
           >
             <div className="w-full px-8">
+              {/* Search form */}
               <form
                 onSubmit={handleSubmit}
                 className="w-full p-2 flex items-center gap-2.5"
               >
+                {/* Search input container */}
                 <div className="flex-1 px-4 py-3 bg-white/10 rounded-[40px] outline outline-1 outline-offset-[-1px] outline-white/20 flex items-center gap-2.5 overflow-hidden">
                   <input
                     type="text"
@@ -286,6 +326,8 @@ function Navbar() {
                     className="w-full bg-transparent border-none outline-none text-white text-base font-light font-['Gotham'] placeholder:text-white/50"
                     autoFocus={isSearchOpen}
                   />
+
+                  {/* Clear search button */}
                   {searchQuery ? (
                     <button
                       type="button"
@@ -298,28 +340,32 @@ function Navbar() {
                   ) : null}
                 </div>
 
+                {/* Submit search button */}
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-[#37B478] hover:bg-[#22C55E] active:bg-[#16A34A] 
-                             text-white text-lg font-['Gotham'] 
-                             rounded-[50px] inline-flex justify-center items-center gap-2.5 
+                  className="px-4 py-2 bg-[#37B478] hover:bg-[#22C55E] active:bg-[#16A34A]
+                             text-white text-lg font-['Gotham']
+                             rounded-[50px] inline-flex justify-center items-center gap-2.5
                              transition-all duration-200 active:scale-95 hover:scale-[1.03]"
                 >
                   Search
                 </button>
               </form>
 
-              {/* نتایج جستجو */}
+              {/* Search results section */}
               <div className="mt-4 text-sm text-white/80 font-['Gotham']">
+                {/* No results state */}
                 {searchQuery && searchResults.length === 0 ? (
                   <div className="rounded-[32px] border border-white/10 bg-white/5 px-5 py-4 break-words">
                     <div>No results found for:</div>
+
                     <div className="text-white break-words">
                       "{searchQuery}"
                     </div>
                   </div>
                 ) : null}
 
+                {/* Results list */}
                 {searchResults.length > 0 ? (
                   <div className="space-y-2">
                     {searchResults.map((result, index) => (
@@ -330,6 +376,7 @@ function Navbar() {
                         <div className="text-white text-sm font-semibold font-['Gotham'] break-words whitespace-normal">
                           {result.title}
                         </div>
+
                         <div className="text-white/70 text-xs font-light font-['Gotham']">
                           {result.type}
                         </div>

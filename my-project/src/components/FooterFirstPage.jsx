@@ -39,7 +39,7 @@ const FooterFirstPage = ({onContactClick}) => {
           </button>
         </div>
 
-        {/* Footer bottom bar - بدون تغییر */}
+        {/* Footer bottom bar  */}
         <div className="absolute bottom-0 left-0 right-0 px-6 pb-8 lg:pb-12 lg:px-[145px]">
           <div className="max-w-[1440px] mx-auto">
             <div className="self-stretch inline-flex justify-between items-center w-full">
