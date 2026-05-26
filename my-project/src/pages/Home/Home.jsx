@@ -3,7 +3,6 @@ import EcosystemSection from "./sections/EcosystemSection";
 import LatestNews from "./sections/LatestNews";
 import WhatWeThink from "./sections/WhatWeThink";
 import Map from "./sections/Map";
-import FooterFirstPage from "./sections/FooterFirstPage";
 
 function Home() {
   return (
@@ -13,7 +12,6 @@ function Home() {
       <LatestNews />
       <WhatWeThink />
       <Map />
-      <FooterFirstPage />
     </>
   );
 }
