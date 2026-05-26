@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 
 import {ThemeProvider} from "./context/ThemeContext";
 
@@ -14,10 +14,9 @@ function App() {
       <div className="relative w-full min-h-screen overflow-x-hidden">
         <Navbar />
         <Routes>
-  <Route path="/" element={<Home />} />
-  <Route path="/automotive" element={<Automotive />} />
-</Routes>
-
+          <Route path="/" element={<Home />} />
+          <Route path="/automotive" element={<Automotive />} />
+        </Routes>
       </div>
     </ThemeProvider>
   );
