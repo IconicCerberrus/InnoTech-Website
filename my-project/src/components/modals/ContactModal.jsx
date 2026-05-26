@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {useTheme} from "../../context/ThemeContext";
+import {useTheme} from "../../context/useTheme";
 
 function ContactModal({isOpen, onClose}) {
   const {isDarkMode} = useTheme();
@@ -7,23 +7,29 @@ function ContactModal({isOpen, onClose}) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    let timer;
+    let renderTimer;
+    let visibleTimer;
 
     if (isOpen) {
-      setShouldRender(true);
-
-      timer = setTimeout(() => {
-        setVisible(true);
-      }, 10);
+      renderTimer = setTimeout(() => {
+        setShouldRender(true);
+        visibleTimer = setTimeout(() => {
+          setVisible(true);
+        }, 10);
+      }, 0);
     } else {
-      setVisible(false);
-
-      timer = setTimeout(() => {
+      visibleTimer = setTimeout(() => {
+        setVisible(false);
+      }, 0);
+      renderTimer = setTimeout(() => {
         setShouldRender(false);
       }, 1000);
     }
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(renderTimer);
+      clearTimeout(visibleTimer);
+    };
   }, [isOpen]);
 
   useEffect(() => {

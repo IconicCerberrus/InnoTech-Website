@@ -1,14 +1,14 @@
-import {useTheme} from "../../../context/ThemeContext";
-import FooterSVG from "../../../assets/FooterFirstPage.svg";
-import FooterSVGDark from "../../../assets/FooterFirstPageDark.svg";
-import FooterInnoTech from "../../../assets/FooterInnoTech.svg";
-import FooterInnoTechDark from "../../../assets/FooterInnoTechDark.svg";
-import Instagram from "../../../assets/Instagram.svg";
-import InstagramDark from "../../../assets/InstagramDark.svg";
-import LinkedIn from "../../../assets/Linkdin.svg";
-import LinkedInDark from "../../../assets/LinkdinDark.svg";
-import WhatsApp from "../../../assets/WhatsApp.svg";
-import WhatsAppDark from "../../../assets/WhatsAppDark.svg";
+import {useTheme} from "../../../context/useTheme";
+import FooterSVG from "../../../assets/logos/FooterFirstPage.svg";
+import FooterSVGDark from "../../../assets/logos/FooterFirstPageDark.svg";
+import FooterInnoTech from "../../../assets/logos/FooterInnoTech.svg";
+import FooterInnoTechDark from "../../../assets/logos/FooterInnoTechDark.svg";
+import Instagram from "../../../assets/icons/Instagram.svg";
+import InstagramDark from "../../../assets/icons/InstagramDark.svg";
+import LinkedIn from "../../../assets/icons/Linkdin.svg";
+import LinkedInDark from "../../../assets/icons/LinkdinDark.svg";
+import WhatsApp from "../../../assets/icons/WhatsApp.svg";
+import WhatsAppDark from "../../../assets/icons/WhatsAppDark.svg";
 
 const FooterFirstPage = ({onContactClick}) => {
   const {isDarkMode} = useTheme();

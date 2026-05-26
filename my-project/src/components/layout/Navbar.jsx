@@ -1,10 +1,10 @@
 import {useEffect, useMemo, useRef, useState} from "react";
-import { useTheme } from "../../context/ThemeContext";
-import Logo from "../../assets/NavbarInnoTech.svg";
-import SunMedium from "../../assets/SunMedium.svg";
-import Moon from "../../assets/Moon.svg";
-import SearchIcon from "../../assets/Search.svg";
-import Vector from "../../assets/Vector.svg";
+import { useTheme } from "../../context/useTheme";
+import Logo from "../../assets/logos/NavbarInnoTech.svg";
+import SunMedium from "../../assets/icons/SunMedium.svg";
+import Moon from "../../assets/icons/Moon.svg";
+import SearchIcon from "../../assets/icons/Search.svg";
+import Vector from "../../assets/icons/Vector.svg";
 
 const searchItems = [
   {title: "What we do", type: "Page"},

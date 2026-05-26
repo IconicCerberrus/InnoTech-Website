@@ -1,9 +1,9 @@
-import {useTheme} from "../../../context/ThemeContext";
-import InnotechEcopic from "../../../assets/InnotechEcopic.svg";
-import InnotechEcopicLight from "../../../assets/InnotechEcopicLight.svg";
-import ellipseBlack from "../../../assets/EllipseBlack.png";
-import ellipseWhite from "../../../assets/EllipseWhite.png";
-import InnoCard from "../../../components/InnoCard";
+import {useTheme} from "../../../context/useTheme";
+import InnotechEcopic from "../../../assets/illustrations/InnotechEcopic.svg";
+import InnotechEcopicLight from "../../../assets/illustrations/InnotechEcopicLight.svg";
+import ellipseBlack from "../../../assets/images/EllipseBlack.png";
+import ellipseWhite from "../../../assets/images/EllipseWhite.png";
+import InnoCard from "../../../components/common/InnoCard";
 
 const cards = [
   {

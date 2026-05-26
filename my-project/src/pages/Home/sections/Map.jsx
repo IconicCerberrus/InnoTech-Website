@@ -1,6 +1,6 @@
-import {useTheme} from "../../../context/ThemeContext";
-import MapImage from "../../../assets/Map.png";
-import MapLightImage from "../../../assets/MapLight.png";
+import {useTheme} from "../../../context/useTheme";
+import MapImage from "../../../assets/images/Map.png";
+import MapLightImage from "../../../assets/images/MapLight.png";
 
 function Map() {
   const {isDarkMode} = useTheme();

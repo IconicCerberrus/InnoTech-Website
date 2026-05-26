@@ -2,9 +2,9 @@ import {Routes, Route} from "react-router-dom";
 
 import {ThemeProvider} from "./context/ThemeContext";
 
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/layout/Navbar";
 
-import Home from "./pages/Home/Home";
+import Home from "./pages/home/Home";
 
 function App() {
   return (

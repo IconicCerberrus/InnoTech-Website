@@ -1,5 +1,5 @@
-import {useTheme} from "../../../context/ThemeContext";
-import bgImage from "../../../assets/Firstpagepic.jpg";
+import {useTheme} from "../../../context/useTheme";
+import bgImage from "../../../assets/images/Firstpagepic.jpg";
 
 function FirstPage() {
   const {isDarkMode} = useTheme();
