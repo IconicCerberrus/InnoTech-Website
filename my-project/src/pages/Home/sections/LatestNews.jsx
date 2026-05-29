@@ -1,5 +1,5 @@
 import {useTheme} from "../../../context/useTheme";
-import LatestNewsImage from "../../../assets/images/LatestNews.jpg";
+import LatestNewsImage from "../../../assets/images/home/LatestNews.jpg";
 
 function LatestNews() {
   const {isDarkMode} = useTheme();

@@ -10,7 +10,10 @@ import LinkedInDark from "../../assets/icons/LinkdinDark.svg";
 import WhatsApp from "../../assets/icons/WhatsApp.svg";
 import WhatsAppDark from "../../assets/icons/WhatsAppDark.svg";
 
-const Footer = ({onContactClick}) => {
+const Footer = ({
+  onContactClick,
+  topSpacingClassName = "-mt-30 md:-mt-40 lg:-mt-24",
+}) => {
   const {isDarkMode} = useTheme();
 
   // در لایت مود (isDarkMode = false) می‌خواهیم فوتر مشکی باشد
@@ -18,7 +21,9 @@ const Footer = ({onContactClick}) => {
   const isLightMode = !isDarkMode;
 
   return (
-    <section className="relative w-full overflow-hidden -mt-30 md:-mt-40 lg:-mt-24 z-20">
+    <section
+      className={`relative w-full overflow-hidden ${topSpacingClassName} z-20`}
+    >
       <div className="relative w-full">
         <img
           src={isLightMode ? FooterSVGDark : FooterSVG}

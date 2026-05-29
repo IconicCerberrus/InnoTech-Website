@@ -98,11 +98,6 @@ function Navbar() {
                   } font-['Gotham'] text-base hover:text-emerald-400 transition-colors`}
                 >
                   <span>Who we are</span>
-                  <img
-                    src={NaN}
-                    alt=""
-                    className="w-[9px] h-[9px] object-contain translate-y-[1px]"
-                  />
                 </a>
 
                 <div
@@ -300,32 +295,22 @@ function Navbar() {
                 </div>
                 <div className="w-52 inline-flex flex-col justify-start items-start gap-5">
   {[
-    "Automotive",
-    "Energy & Materials ",
-    "Health",
-    "High Tech",
-    "Metals & Mining",
-  ].map((item) =>
-    item === "Automotive" ? (
+    {label: "Automotive", to: "/automotive"},
+    {label: "Energy & Materials ", to: "/energy-and-materials"},
+    {label: "Health", to: "/health"},
+    {label: "High Tech", to: "/high-tech"},
+    {label: "Metals & Mining", to: "/metals-and-mining"},
+  ].map((item) => (
       <Link
-        key={item}
-        to="/automotive"
+        key={item.label}
+        to={item.to}
         onClick={() => setIsDropdownOpen(false)}
         className={`${
           isDarkMode ? "text-white" : "text-black"
         } text-base font-bold font-['Gotham'] hover:text-emerald-400 transition-colors cursor-pointer`}
       >
-        {item}
+        {item.label}
       </Link>
-    ) : (
-      <div
-        key={item}
-        className={`${
-          isDarkMode ? "text-white" : "text-black"
-        } text-base font-bold font-['Gotham'] hover:text-emerald-400 transition-colors cursor-pointer`}
-      >
-        {item}
-      </div>
     )
   )}
 </div>

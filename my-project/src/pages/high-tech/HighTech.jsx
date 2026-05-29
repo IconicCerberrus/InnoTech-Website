@@ -4,7 +4,7 @@ import OurExpert from "./sections/OurExpert";
 import OurServicesIn from "./sections/OurServicesIn";
 import WhatWeThink from "../home/sections/WhatWeThink";
 
-function Automotive() {
+function HighTech() {
   return (
     <>
       <AutomotiveSection />
@@ -16,4 +16,4 @@ function Automotive() {
   );
 }
 
-export default Automotive;
+export default HighTech;

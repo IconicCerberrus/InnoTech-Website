@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {useTheme} from "../../../context/useTheme";
-import HowWeThinkImage from "../../../assets/images/HowWeThink.jpg";
+import HowWeThinkImage from "../../../assets/images/home/HowWeThink.jpg";
 
 function HowWeThink() {
   const {isDarkMode} = useTheme();

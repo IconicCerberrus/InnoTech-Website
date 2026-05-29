@@ -1,8 +1,8 @@
 import {useTheme} from "../../../context/useTheme";
 import InnotechEcopic from "../../../assets/illustrations/InnotechEcopic.svg";
 import InnotechEcopicLight from "../../../assets/illustrations/InnotechEcopicLight.svg";
-import ellipseBlack from "../../../assets/images/EllipseBlack.png";
-import ellipseWhite from "../../../assets/images/EllipseWhite.png";
+import ellipseBlack from "../../../assets/images/home/EllipseBlack.png";
+import ellipseWhite from "../../../assets/images/home/EllipseWhite.png";
 import InnoCard from "../components/InnoCard";
 
 const cards = [
