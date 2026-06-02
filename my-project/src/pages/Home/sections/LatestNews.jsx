@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom";
 import {useTheme} from "../../../context/useTheme";
 import LatestNewsImage from "../../../assets/images/home/LatestNews.jpg";
 
@@ -6,7 +7,7 @@ function LatestNews() {
 
   return (
     <section
-      className={`relative w-full py-[60px] px-[120px] sm:px-7 lg:px-35 transition-colors duration-500 ease-in-out ${
+      className={`relative w-full px-7 py-[60px] lg:px-35 transition-colors duration-500 ease-in-out ${
         isDarkMode ? "bg-black" : "bg-white"
       }`}
     >
@@ -77,9 +78,8 @@ function LatestNews() {
             <div className="h-8" />
 
             {/* READ MORE button */}
-            <button
-              type="button"
-              onClick={() => {}}
+            <Link
+              to="/ai-agent"
               className="group flex w-fit flex-col items-start cursor-pointer transition-all duration-300"
             >
               <div
@@ -91,7 +91,7 @@ function LatestNews() {
               </div>
 
               <div className="mt-[2px] h-[2px] w-20 rounded-full bg-[#37B478] opacity-75 blur-[0.5px] transition-all duration-300 group-hover:w-24" />
-            </button>
+            </Link>
           </div>
 
           {/* RIGHT IMAGE - بدون تغییر */}

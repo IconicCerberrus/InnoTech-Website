@@ -3,20 +3,22 @@ import SectionTitle from "../components/SectionTitle";
 
 function ExpertsSection({experts, image, isDarkMode, textColor}) {
   return (
-    <section className="flex flex-col items-start gap-8 overflow-visible px-28 py-14">
-      <SectionTitle textColor={textColor} weight="font-bold">
-        Our Expert in inception
-      </SectionTitle>
-      <div className="grid w-full grid-cols-3 items-stretch gap-8 overflow-visible">
-        {experts.map((expert) => (
-          <ExpertCard
-            key={expert.id}
-            image={image}
-            title={expert.name}
-            subtitle={expert.role}
-            isDarkMode={isDarkMode}
-          />
-        ))}
+    <section className="overflow-visible px-6 py-14 md:px-16 xl:px-[120px]">
+      <div className="mx-auto flex w-full max-w-[1600px] flex-col items-start gap-8 overflow-visible">
+        <SectionTitle textColor={textColor} weight="font-bold">
+          Our Expert in inception
+        </SectionTitle>
+        <div className="grid w-full grid-cols-3 items-stretch gap-8 overflow-visible">
+          {experts.map((expert) => (
+            <ExpertCard
+              key={expert.id}
+              image={image}
+              title={expert.name}
+              subtitle={expert.role}
+              isDarkMode={isDarkMode}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

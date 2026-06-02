@@ -1,10 +1,25 @@
 import {useState} from "react";
+import {Link} from "react-router-dom";
 import {useTheme} from "../../../context/useTheme";
 import healthInsightLeft from "../../../assets/images/industries/health/health1.png";
 import healthInsightTop from "../../../assets/images/industries/health/health2.png";
 import healthInsightBottom from "../../../assets/images/industries/health/health3.png";
 import insightExcludeImage from "../../../assets/icons/InsightExclude.png";
 import insightExcludeBlackImage from "../../../assets/icons/InsightExcludeBlack.png";
+
+function InsightReadMoreLink({isDarkMode}) {
+  return (
+    <Link
+      to="/ai-agent"
+      className={`group mt-auto flex w-fit flex-col items-start text-base transition-colors duration-300 hover:text-[#37B478] ${
+        isDarkMode ? "text-white" : "text-black"
+      }`}
+    >
+      <span>Read more</span>
+      <span className="mt-1 h-[2px] w-0 rounded-full bg-[#37B478] transition-all duration-300 group-hover:w-full" />
+    </Link>
+  );
+}
 
 function LiveHealthInsights() {
   const {isDarkMode} = useTheme();
@@ -60,7 +75,7 @@ function LiveHealthInsights() {
 
   return (
     <section
-      className={`w-full px-28 py-14 overflow-hidden relative transition-colors duration-500 ease-in-out ${
+      className={`w-full px-6 py-14 md:px-16 xl:px-[120px] overflow-hidden relative transition-colors duration-500 ease-in-out ${
         isDarkMode ? "bg-black" : "bg-white"
       }`}
     >
@@ -74,7 +89,7 @@ function LiveHealthInsights() {
           height: "2851.58px",
         }}
       />
-      <div className="flex flex-col gap-8 relative z-10">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1600px] flex-col gap-8">
         {/* TITLE section */}
         <div className="relative inline-flex items-center gap-3.5">
           <div className="absolute left-[-14px] top-[-19px] size-16 rounded-full border border-[#37B478]" />
@@ -159,6 +174,8 @@ function LiveHealthInsights() {
                   past 20 years, far outpacing the general growth rate across
                   all other technology sectors.
                 </div>
+
+                <InsightReadMoreLink isDarkMode={isDarkMode} />
               </div>
             </div>
           </div>
@@ -230,6 +247,8 @@ function LiveHealthInsights() {
                     patient interactions to identify potential mental health
                     conditions.
                   </div>
+
+                  <InsightReadMoreLink isDarkMode={isDarkMode} />
                 </div>
               </div>
             </div>
@@ -298,6 +317,8 @@ function LiveHealthInsights() {
                     a remarkable volume of patents registered each year in the
                     Probiotics sector.
                   </div>
+
+                  <InsightReadMoreLink isDarkMode={isDarkMode} />
                 </div>
               </div>
             </div>
@@ -306,7 +327,10 @@ function LiveHealthInsights() {
 
         {/* CTA button */}
         <div className="flex justify-end">
-          <button className="group flex flex-col items-end transition-all duration-900">
+          <Link
+            to="/ai-agent"
+            className="group flex flex-col items-end transition-all duration-900"
+          >
             <div
               className={`transition-colors duration-300 group-hover:text-[#37B478] ${
                 isDarkMode ? "text-white" : "text-black"
@@ -315,7 +339,7 @@ function LiveHealthInsights() {
               Read all insights
             </div>
             <div className="mt-1 h-[2px] w-0 bg-[#37B478] rounded-full transition-all duration-300 group-hover:w-full" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>

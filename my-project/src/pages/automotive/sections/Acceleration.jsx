@@ -6,16 +6,16 @@ const Introduction = () => {
 
   return (
     <div
-      className={`self-stretch px-28 py-14 inline-flex flex-col justify-start items-start gap-2.5 ${
+      className={`self-stretch px-6 py-14 md:px-16 xl:px-[120px] ${
         isDarkMode ? "bg-[#050505]" : "bg-white"
       }`}
     >
-      <div className="self-stretch relative flex flex-col justify-center items-start gap-4">
+      <div className="relative mx-auto flex w-full max-w-[1600px] flex-col items-start justify-center gap-4">
         {/* Green Circle */}
-        <div className="size-16 left-[10px] top-[-19px] absolute rounded-full border border-[#37B478]" />
+        <div className="size-16 left-[-14px] top-[-19px] absolute rounded-full border border-[#37B478]" />
 
         {/* Title */}
-        <div className={`self-stretch justify-start px-6 text-4xl font-bold font-['Gotham'] ${textColor}`}>
+        <div className={`self-stretch justify-start text-4xl font-bold font-['Gotham'] ${textColor}`}>
           ACCELERATION
         </div>
 

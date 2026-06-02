@@ -21,13 +21,15 @@ function Navbar() {
   const {isDarkMode, toggleTheme} = useTheme();
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState("En");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
   const navRef = useRef(null);
   const inputRef = useRef(null);
 
-  const isAnyDropdownOpen = isDropdownOpen || isSearchOpen;
+  const isAnyDropdownOpen = isDropdownOpen || isLanguageOpen || isSearchOpen;
 
   const searchResults = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
@@ -42,6 +44,7 @@ function Navbar() {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
         setIsDropdownOpen(false);
+        setIsLanguageOpen(false);
         setIsSearchOpen(false);
         setSearchQuery("");
       }
@@ -65,18 +68,33 @@ function Navbar() {
   const handleSearchToggle = () => {
     setIsSearchOpen((prev) => !prev);
     setIsDropdownOpen(false);
+    setIsLanguageOpen(false);
   };
 
   const handleDropdownToggle = () => {
     setIsDropdownOpen((prev) => !prev);
+    setIsLanguageOpen(false);
     setIsSearchOpen(false);
+  };
+
+  const handleLanguageToggle = () => {
+    setIsLanguageOpen((prev) => !prev);
+    setIsDropdownOpen(false);
+    setIsSearchOpen(false);
+  };
+
+  const handleLanguageSelect = (language) => {
+    setSelectedLanguage(language);
+    setIsLanguageOpen(false);
   };
 
   return (
     <nav ref={navRef} className="fixed top-0 left-0 right-0 z-50 pt-6">
       <div className="w-[1265px] mx-auto">
         <div
-          className={`border shadow-2xl overflow-hidden transition-all duration-500 ease-in-out ${
+          className={`border shadow-2xl ${
+            isLanguageOpen ? "overflow-visible" : "overflow-hidden"
+          } transition-all duration-500 ease-in-out ${
             isDarkMode
               ? "bg-black/20 border-white/10 backdrop-blur-[3px]"
               : "bg-white/20 border-black/10 backdrop-blur-[2px]"
@@ -105,6 +123,7 @@ function Navbar() {
                   to="/who-we-are"
                   onClick={() => {
                     setIsDropdownOpen(false);
+                    setIsLanguageOpen(false);
                     setIsSearchOpen(false);
                   }}
                   className={`flex items-center gap-1 ${
@@ -138,6 +157,7 @@ function Navbar() {
                   to="/what-we-think"
                   onClick={() => {
                     setIsDropdownOpen(false);
+                    setIsLanguageOpen(false);
                     setIsSearchOpen(false);
                   }}
                   className={`${
@@ -168,20 +188,60 @@ function Navbar() {
             </div>
 
             <div className="flex items-center gap-5">
-              <button
-                type="button"
-                className={`flex items-center gap-1 ${
-                  isDarkMode ? "text-white" : "text-black"
-                } font-['Gotham'] text-base leading-none hover:text-emerald-400 transition-colors`}
-              >
-                <span>En</span>
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={handleLanguageToggle}
+                  aria-expanded={isLanguageOpen}
+                  className={`flex items-center gap-1 ${
+                    isDarkMode ? "text-white" : "text-black"
+                  } font-['Gotham'] text-base leading-none hover:text-emerald-400 transition-colors`}
+                >
+                  <span>{selectedLanguage}</span>
 
-                <img
-                  src={Vector}
-                  alt=""
-                  className="w-[9px] h-[9px] object-contain translate-y-[1px]"
-                />
-              </button>
+                  <img
+                    src={Vector}
+                    alt=""
+                    className={`w-[9px] h-[9px] object-contain translate-y-[1px] transition-transform duration-300 ${
+                      isLanguageOpen ? "rotate-180" : "rotate-0"
+                    } ${isDarkMode ? "" : "brightness-0"}`}
+                  />
+                </button>
+
+                <div
+                  className={`absolute right-0 top-9 w-32 overflow-hidden rounded-[18px] border shadow-xl transition-all duration-300 ${
+                    isLanguageOpen
+                      ? "translate-y-0 opacity-100"
+                      : "pointer-events-none -translate-y-2 opacity-0"
+                  } ${
+                    isDarkMode
+                      ? "border-white/10 bg-zinc-950/90"
+                      : "border-black/10 bg-white/95"
+                  }`}
+                >
+                  {[
+                    {label: "En", name: "English"},
+                    {label: "Tr", name: "Türkçe"},
+                    {label: "Ar", name: "العربية"},
+                  ].map((language) => (
+                    <button
+                      key={language.label}
+                      type="button"
+                      onClick={() => handleLanguageSelect(language.label)}
+                      className={`flex w-full items-center justify-between px-4 py-3 text-left font-['Gotham'] text-sm transition-colors ${
+                        isDarkMode
+                          ? "text-white hover:bg-white/10"
+                          : "text-black hover:bg-black/5"
+                      }`}
+                    >
+                      <span>{language.name}</span>
+                      <span className="text-xs text-[#37B478]">
+                        {language.label}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
 
               <div
                 className={`w-[1.5px] h-[21px] ${
@@ -327,7 +387,10 @@ function Navbar() {
                     <Link
                       key={item.label}
                       to={item.to}
-                      onClick={() => setIsDropdownOpen(false)}
+                      onClick={() => {
+                        setIsDropdownOpen(false);
+                        setIsLanguageOpen(false);
+                      }}
                       className={`${
                         isDarkMode ? "text-white" : "text-black"
                       } text-base font-bold font-['Gotham'] hover:text-emerald-400 transition-colors cursor-pointer`}

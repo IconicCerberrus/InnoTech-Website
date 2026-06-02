@@ -113,10 +113,17 @@ function ServiceCard({title, description, isWide = false, isDarkMode}) {
           </p>
         </div>
 
-        <span
-          aria-hidden="true"
-          className="relative z-10 mt-1 h-0 w-0 shrink-0 border-y-[9px] border-l-[14px] border-y-transparent border-l-[#37B478]"
-        />
+        <button
+          type="button"
+          aria-label={`Open ${title}`}
+          onClick={() => {}}
+          className="relative z-10 mt-1 flex size-8 shrink-0 items-center justify-center rounded-full transition-transform duration-200 hover:scale-110 active:scale-95"
+        >
+          <span
+            aria-hidden="true"
+            className="h-0 w-0 border-y-[9px] border-l-[14px] border-y-transparent border-l-[#37B478]"
+          />
+        </button>
       </article>
     </div>
   );
@@ -131,7 +138,7 @@ function OurServicesIn() {
         isDarkMode ? "bg-[#050505]" : "bg-white"
       }`}
     >
-      <div className="flex w-full flex-col items-start gap-8">
+      <div className="mx-auto flex w-full max-w-[1600px] flex-col items-start gap-8">
         <div className="relative flex w-full flex-col items-start justify-center gap-2">
           <div className="absolute left-[-14px] top-[-19px] size-16 rounded-full border border-[#37B478]" />
           <h2

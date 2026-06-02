@@ -2,9 +2,9 @@ import SectionTitle from "../components/SectionTitle";
 
 function CareersSection({image, invertedTextColor, inverseCardBackground}) {
   return (
-    <section className="flex h-[640px] flex-col items-start gap-2.5 overflow-hidden px-28 py-14">
+    <section className="flex h-[640px] flex-col items-start gap-2.5 overflow-hidden px-6 py-14 md:px-16 xl:px-[120px]">
       <div
-        className={`flex flex-1 items-start justify-center gap-8 overflow-hidden rounded-[50px] transition-colors duration-500 ${inverseCardBackground}`}
+        className={`mx-auto flex w-full max-w-[1600px] flex-1 items-start justify-center gap-8 overflow-hidden rounded-[50px] transition-colors duration-500 ${inverseCardBackground}`}
       >
         <div className="flex flex-1 flex-col items-start justify-start gap-8 self-stretch p-16">
           <SectionTitle textColor={invertedTextColor} weight="font-bold">

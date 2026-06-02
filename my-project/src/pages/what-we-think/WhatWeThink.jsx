@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {Link} from "react-router-dom";
 
 import {useTheme} from "../../context/useTheme";
 import BlackExcludeLeftWhatWeThink from "../../assets/images/home/BlackExcludeLeftWhatWeThink.png";
@@ -112,6 +113,14 @@ function ArticleCopy({
       >
         {description}
       </p>
+
+      <Link
+        to="/ai-agent"
+        className={`group mt-auto flex w-fit flex-col items-start text-base transition-colors duration-300 hover:text-[#37B478] ${textColor}`}
+      >
+        <span>Read more</span>
+        <span className="mt-1 h-[2px] w-0 rounded-full bg-[#37B478] transition-all duration-300 group-hover:w-full" />
+      </Link>
     </div>
   );
 }
@@ -265,6 +274,16 @@ function WhatWeThink() {
           objectPosition="center center"
           isDarkMode={isDarkMode}
         />
+
+        <div className="flex w-full justify-end pb-10 pt-4">
+          <Link
+            to="/archives"
+            className={`group flex flex-col items-end font-['Gotham'] text-lg transition-colors duration-300 hover:text-[#37B478] ${titleColor}`}
+          >
+            <span>see all archives</span>
+            <span className="mt-1 h-[2px] w-0 rounded-full bg-[#37B478] transition-all duration-300 group-hover:w-full" />
+          </Link>
+        </div>
       </section>
     </main>
   );

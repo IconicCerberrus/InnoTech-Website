@@ -111,7 +111,7 @@ function EcosystemSection() {
           </div>
         </div>
 
-        <div className="w-full max-w-301.25 mx-auto px-4">
+        <div className="mx-auto w-full max-w-[1600px] px-7 lg:px-35">
           <div className="flex flex-wrap justify-between items-start gap-6">
             {cards.map((card) => (
               <InnoCard

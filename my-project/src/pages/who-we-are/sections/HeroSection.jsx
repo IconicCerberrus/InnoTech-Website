@@ -1,6 +1,6 @@
 function HeroSection({textColor}) {
   return (
-    <section className="flex h-[430px] flex-col items-center justify-start gap-2 px-28 py-14">
+    <section className="flex h-[430px] flex-col items-center justify-start gap-2 px-28 -translate-y-15">
       <div className="size-6 rounded-full bg-[#37B478]" />
       <h1 className={`font-['Gotham'] text-7xl font-semibold ${textColor}`}>
         Who we are

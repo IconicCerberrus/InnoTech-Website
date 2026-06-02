@@ -14,7 +14,7 @@ function WhoWeAreBackground({images, isDarkMode}) {
   const positions = {
     top: "top-[-50px]",
     top2: "top-[-30px]",
-    middle: "top-[1780px]",
+    middle: "top-[2180px]",
   };
 
   return (

@@ -10,6 +10,7 @@ import ScrollToTop from "./components/layout/ScrollToTop";
 
 import Home from "./pages/home/Home";
 import AiAgent from "./pages/ai-agent/AiAgent";
+import Archives from "./pages/archives/Archives";
 import WhatWeThink from "./pages/what-we-think/WhatWeThink";
 import WhoWeAre from "./pages/who-we-are/WhoWeAre";
 
@@ -32,6 +33,7 @@ function App() {
           "/high-tech",
           "/metals-and-mining",
           "/ai-agent",
+          "/archives",
           "/who-we-are",
         ].includes(pathname)
         ? "mt-0"
@@ -45,6 +47,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/ai-agent" element={<AiAgent />} />
+          <Route path="/archives" element={<Archives />} />
           <Route path="/what-we-think" element={<WhatWeThink />} />
           <Route path="/who-we-are" element={<WhoWeAre />} />
           <Route path="/automotive" element={<Automotive />} />
