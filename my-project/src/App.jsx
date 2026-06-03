@@ -12,20 +12,32 @@ import {industryRoutes, serviceRoutes, routes} from "./routes";
 
 const Home = lazy(() => import("./pages/home/Home"));
 const AiAgent = lazy(() => import("./pages/ai-agent/AiAgent"));
-const Archives = lazy(() => import("./pages/archives/Archives"));
+const Archives = lazy(() => import("./pages/what-we-think/archives/Archives"));
 const WhatWeThink = lazy(() => import("./pages/what-we-think/WhatWeThink"));
 const WhoWeAre = lazy(() => import("./pages/who-we-are/WhoWeAre"));
-const Inception = lazy(() => import("./pages/what-we-do/inception/Inception"));
-const Insight = lazy(() => import("./pages/what-we-do/insight/Insight"));
-const Infinity = lazy(() => import("./pages/what-we-do/infinity/Infinity"));
-const Automotive = lazy(() => import("./pages/automotive/Automotive"));
-const EnergyAndMaterials = lazy(() =>
-  import("./pages/energy-and-materials/EnergyAndMaterials"),
+const Inception = lazy(() =>
+  import("./pages/what-we-do/services/inception/Inception"),
 );
-const Health = lazy(() => import("./pages/health/Health"));
-const HighTech = lazy(() => import("./pages/high-tech/HighTech"));
+const Insight = lazy(() =>
+  import("./pages/what-we-do/services/insight/Insight"),
+);
+const InfinityPage = lazy(() =>
+  import("./pages/what-we-do/services/infinity/Infinity"),
+);
+const Automotive = lazy(() =>
+  import("./pages/what-we-do/industries/automotive/Automotive"),
+);
+const EnergyAndMaterials = lazy(() =>
+  import("./pages/what-we-do/industries/energy-and-materials/EnergyAndMaterials"),
+);
+const Health = lazy(() =>
+  import("./pages/what-we-do/industries/health/Health"),
+);
+const HighTech = lazy(() =>
+  import("./pages/what-we-do/industries/high-tech/HighTech"),
+);
 const MetalsAndMining = lazy(() =>
-  import("./pages/metals-and-mining/MetalsAndMining"),
+  import("./pages/what-we-do/industries/metals-and-mining/MetalsAndMining"),
 );
 
 function App() {
@@ -58,7 +70,7 @@ function App() {
             <Route path={routes.whoWeAre} element={<WhoWeAre />} />
             <Route path={routes.inception} element={<Inception />} />
             <Route path={routes.insight} element={<Insight />} />
-            <Route path={routes.infinity} element={<Infinity />} />
+            <Route path={routes.infinity} element={<InfinityPage />} />
             <Route path={routes.automotive} element={<Automotive />} />
             <Route
               path={routes.energyAndMaterials}

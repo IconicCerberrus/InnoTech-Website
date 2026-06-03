@@ -7,16 +7,12 @@ import SearchIcon from "../../assets/icons/Search.svg";
 import Vector from "../../assets/icons/Vector.svg";
 import {Link} from "react-router-dom";
 import {routes} from "../../routes";
-
-const searchItems = [
-  {title: "Who we are", type: "Page"},
-  {title: "What we do", type: "Page"},
-  {title: "What we think", type: "Page"},
-  {title: "INSIGHT Store", type: "Page"},
-  {title: "Innovation and Technology Management", type: "Article"},
-  {title: "Digital Transformation Report", type: "Report"},
-  {title: "Market Analytics Report", type: "Report"},
-];
+import {
+  industryMenuItems,
+  languageOptions,
+  searchItems,
+  serviceMenuItems,
+} from "./navData";
 
 function Navbar() {
   const {isDarkMode, toggleTheme} = useTheme();
@@ -218,14 +214,7 @@ function Navbar() {
                       : "border-black/10 bg-white/95"
                   }`}
                 >
-                  {[
-                    {label: "En", name: "English"},
-                    {label: "Tr", name: "Türkçe"},
-                    {
-                      label: "Ar",
-                      name: "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
-                    },
-                  ].map((language) => (
+                  {languageOptions.map((language) => (
                     <button
                       key={language.label}
                       type="button"
@@ -306,24 +295,7 @@ function Navbar() {
                 </div>
 
                 <div className="w-52 inline-flex flex-col justify-start items-start gap-5">
-                  {[
-                    {
-                      label: "INCEPTION",
-                      description: "Innovation and Technology Management",
-                      to: routes.inception,
-                    },
-                    {
-                      label: "INSIGHT",
-                      description:
-                        "Science, Technology, Innovation and Market Analytics & Reports",
-                      to: routes.insight,
-                    },
-                    {
-                      label: "INFINITY",
-                      description: "Digital Transformation and Industry 4.0",
-                      to: routes.infinity,
-                    },
-                  ].map((service) => (
+                  {serviceMenuItems.map((service) => (
                     <Link
                       key={service.label}
                       to={service.to}
@@ -363,19 +335,7 @@ function Navbar() {
                 </div>
 
                 <div className="w-52 inline-flex flex-col justify-start items-start gap-5">
-                  {[
-                    {label: "Automotive", to: routes.automotive},
-                    {
-                      label: "Energy & Materials",
-                      to: routes.energyAndMaterials,
-                    },
-                    {label: "Health", to: routes.health},
-                    {label: "High Tech", to: routes.highTech},
-                    {
-                      label: "Metals & Mining",
-                      to: routes.metalsAndMining,
-                    },
-                  ].map((item) => (
+                  {industryMenuItems.map((item) => (
                     <Link
                       key={item.label}
                       to={item.to}
