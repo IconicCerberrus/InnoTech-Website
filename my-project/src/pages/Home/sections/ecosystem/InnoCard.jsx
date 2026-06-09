@@ -12,6 +12,7 @@ const INNO_CARD_TEXT_STYLES = {
   itemDescription: "text-xs font-light leading-tight",
 };
 
+
 function InnoCard({title, subtitle, items = []}) {
   const {isDarkMode} = useTheme();
 
