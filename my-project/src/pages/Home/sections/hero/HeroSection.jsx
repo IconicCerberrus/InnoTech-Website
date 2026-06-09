@@ -1,12 +1,13 @@
 import {Link} from "react-router-dom";
 
-import {useTheme} from "../../../context/useTheme";
-import {routes} from "../../../routes";
-import bgImage from "../../../assets/images/home/Firstpagepic.jpg";
-import aiAgentExcludeImage from "../../../assets/images/excludes/home/AIagentExclude.png";
-import aiAgentExcludeWhiteImage from "../../../assets/images/excludes/home/AIagentExcludeWhite.png";
+import {useTheme} from "../../../../context/useTheme";
+import {routes} from "../../../../routes";
+import bgImage from "../../../../assets/images/home/Firstpagepic.jpg";
+import aiAgentExcludeImage from "../../../../assets/images/excludes/home/AIagentExclude.png";
+import aiAgentExcludeWhiteImage from "../../../../assets/images/excludes/home/AIagentExcludeWhite.png";
+import {heroContent} from "./data";
 
-function FirstPage() {
+function HeroSection() {
   const {isDarkMode} = useTheme();
   const aiAgentExclude = isDarkMode
     ? aiAgentExcludeImage
@@ -45,7 +46,7 @@ function FirstPage() {
                 isDarkMode ? "text-white" : "text-black"
               }`}
             >
-              AI Agent
+              {heroContent.title}
             </div>
           </div>
 
@@ -55,8 +56,7 @@ function FirstPage() {
               isDarkMode ? "text-white" : "text-black"
             }`}
           >
-            We leverage the advances in disruptive technologies to enhance
-            business.
+            {heroContent.description}
           </div>
 
           {/* Read more button and underline */}
@@ -66,11 +66,11 @@ function FirstPage() {
               className="group flex w-fit flex-col items-start cursor-pointer transition-all duration-300"
             >
               <div
-                className={`text-base font-normal font-['Gotham'] transition-colors duration-300 group-hover:text-[#37B478] ${
+                className={`text-base font-light font-['Gotham'] transition-colors duration-300 group-hover:text-[#37B478] ${
                   isDarkMode ? "text-white" : "text-black"
                 }`}
               >
-                Read more
+                {heroContent.linkLabel}
               </div>
               <div className="mt-1 h-0.5 w-20 rounded-full bg-[#37B478] transition-all duration-300 group-hover:w-24" />
             </Link>
@@ -99,4 +99,4 @@ function FirstPage() {
   );
 }
 
-export default FirstPage;
+export default HeroSection;

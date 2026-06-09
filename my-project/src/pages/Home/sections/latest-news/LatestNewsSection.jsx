@@ -1,8 +1,9 @@
-import {useTheme} from "../../../context/useTheme";
-import ReadMoreLink from "../../../components/ui/ReadMoreLink";
-import LatestNewsImage from "../../../assets/images/home/LatestNews.jpg";
+import {useTheme} from "../../../../context/useTheme";
+import ReadMoreLink from "../../../../components/ui/ReadMoreLink";
+import LatestNewsImage from "../../../../assets/images/home/LatestNews.jpg";
+import {latestNews} from "./data";
 
-function LatestNews() {
+function LatestNewsSection() {
   const {isDarkMode} = useTheme();
 
   return (
@@ -28,7 +29,7 @@ function LatestNews() {
                   isDarkMode ? "text-black" : "text-white"
                 }`}
               >
-                Our latest news
+                {latestNews.sectionTitle}
               </div>
             </div>
 
@@ -40,7 +41,7 @@ function LatestNews() {
                 isDarkMode ? "text-black" : "text-white"
               }`}
             >
-              InnotechCo launches regional collaboration with Cleannconnect.ai
+              {latestNews.headline}
             </div>
 
             <div className="h-8" />
@@ -52,24 +53,21 @@ function LatestNews() {
                   isDarkMode ? "text-black" : "text-white"
                 }`}
               >
-                June 1, 2026
+                {latestNews.date}
               </div>
 
               <div className="text-[#37B478] text-base font-['Gotham']">
-                2 minutes read
+                {latestNews.readTime}
               </div>
             </div>
 
             {/* Summary */}
             <div
-              className={`mt-10 max-w-[690px] text-base font-semilight font-['Gotham'] leading-[1.35] transition-colors duration-500 ease-in-out ${
+              className={`mt-10 max-w-[690px] whitespace-pre-line text-base font-semilight font-['Gotham'] leading-[1.35] transition-colors duration-500 ease-in-out ${
                 isDarkMode ? "text-black" : "text-white"
               }`}
             >
-              The partnership ,sparked at ADIPEC 2025, integrates AI-driven{" "}
-              <br />
-              clean tech solutions across regional supply chains, accelerating
-              sustainability and operational efficiency for industrial clients.
+              {latestNews.summary}
             </div>
 
             <div className="h-8" />
@@ -95,4 +93,4 @@ function LatestNews() {
   );
 }
 
-export default LatestNews;
+export default LatestNewsSection;

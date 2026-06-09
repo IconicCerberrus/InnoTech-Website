@@ -4,7 +4,7 @@ export const ecosystemCards = [
     subtitle: "BY INNOTECH",
     items: [
       {
-        label: "ISO56000 Standard Assistant:",
+        label: "ISO56000 Standard:",
         description:
           "Innovation management\nmaturity assessment and\n system design",
       },
@@ -15,6 +15,7 @@ export const ecosystemCards = [
       },
       {
         label: "BRIGHTIDEA:",
+        labelWeight: "medium",
         description: "World's #1 ideation tool and innovation cloud",
       },
     ],
@@ -25,11 +26,13 @@ export const ecosystemCards = [
     items: [
       {
         label: "Digital Transformation:",
+        labelWeight: "medium",
         description:
           "Transitioning from intuition to data-driven intelligence\nthrough structured human-centric empowerment.",
       },
       {
         label: "AI Agent:",
+        labelWeight: "medium",
         description:
           "Prescriptive digital assistant converting real-time production data into actionable operational intelligence..",
       },

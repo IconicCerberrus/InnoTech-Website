@@ -1,8 +1,9 @@
-import {useTheme} from "../../../context/useTheme";
-import MapImage from "../../../assets/images/home/Map.png";
-import MapLightImage from "../../../assets/images/home/MapLight.png";
+import {useTheme} from "../../../../context/useTheme";
+import MapImage from "../../../../assets/images/home/Map.png";
+import MapLightImage from "../../../../assets/images/home/MapLight.png";
+import {globalFootprint} from "./data";
 
-function Map() {
+function GlobalFootprintSection() {
   const {isDarkMode} = useTheme();
 
   return (
@@ -26,7 +27,7 @@ function Map() {
             isDarkMode ? "text-white" : "text-black"
           }`}
         >
-          EXPLORE OUR GLOBAL FOOTPRINT
+          {globalFootprint.title}
         </div>
 
         {/* Subheading */}
@@ -35,8 +36,7 @@ function Map() {
             isDarkMode ? "text-white" : "text-black"
           }`}
         >
-          Explore our global footprint and connect directly with the
-          representative that can support your needs fastest
+          {globalFootprint.description}
         </div>
       </div>
 
@@ -44,7 +44,7 @@ function Map() {
       <div className="w-full flex justify-center">
         <img
           src={isDarkMode ? MapImage : MapLightImage}
-          alt="Middle East Map"
+          alt={globalFootprint.imageAlt}
           className="w-full max-w-[1100px] object-contain transition-opacity duration-500 ease-in-out"
         />
       </div>
@@ -52,4 +52,4 @@ function Map() {
   );
 }
 
-export default Map;
+export default GlobalFootprintSection;

@@ -1,8 +1,16 @@
-import {useTheme} from "../../../context/useTheme";
-import InceptionIcon from "../../../assets/icons/Inception-Icon 1.svg";
-import InfinityIcon from "../../../assets/icons/Subtract.svg";
-import InsightIcon from "../../../assets/icons/Subtract2.svg";
-import InlearnIcon from "../../../assets/icons/Subtract3.svg";
+import {useTheme} from "../../../../context/useTheme";
+import InceptionIcon from "../../../../assets/icons/Inception-Icon 1.svg";
+import InfinityIcon from "../../../../assets/icons/Subtract.svg";
+import InsightIcon from "../../../../assets/icons/Subtract2.svg";
+import InlearnIcon from "../../../../assets/icons/Subtract3.svg";
+
+// Adjust all InnoCard typography from this single section-local object.
+const INNO_CARD_TEXT_STYLES = {
+  title: "text-base font-bold leading-none",
+  subtitle: "mt-1 text-xs font-normal",
+  itemLabel: "text-sm font-normal",
+  itemDescription: "text-xs font-light leading-tight",
+};
 
 function InnoCard({title, subtitle, items = []}) {
   const {isDarkMode} = useTheme();
@@ -115,11 +123,11 @@ function InnoCard({title, subtitle, items = []}) {
 
           <div className="flex flex-col justify-start items-start">
             <div
-              className={`${textColor} text-base font-bold font-['Gotham'] leading-none transition-colors duration-500 ease-in-out`}
+              className={`${textColor} ${INNO_CARD_TEXT_STYLES.title} font-['Gotham'] transition-colors duration-500 ease-in-out`}
               dangerouslySetInnerHTML={{__html: renderBoldText(title)}}
             />
             <div
-              className={`${subtitleColor} text-xs font-['Gotham'] mt-1 transition-colors duration-500 ease-in-out`}
+              className={`${subtitleColor} ${INNO_CARD_TEXT_STYLES.subtitle} font-['Gotham'] transition-colors duration-500 ease-in-out`}
             >
               {subtitle}
             </div>
@@ -145,13 +153,13 @@ function InnoCard({title, subtitle, items = []}) {
               </div>
 
               <div
-                className={`flex-1 justify-start ${textColor} text-sm font-['Gotham'] whitespace-pre-line transition-colors duration-500 ease-in-out`}
+                className={`flex-1 justify-start ${textColor} ${INNO_CARD_TEXT_STYLES.itemLabel} font-['Gotham'] whitespace-pre-line transition-colors duration-500 ease-in-out`}
                 dangerouslySetInnerHTML={{__html: renderBoldText(item.label)}}
               />
             </div>
 
             <div
-              className={`self-stretch text-left ${textColor} text-xs font-light font-['Gotham'] leading-tight whitespace-pre-line transition-colors duration-500 ease-in-out`}
+              className={`self-stretch text-left ${textColor} ${INNO_CARD_TEXT_STYLES.itemDescription} font-['Gotham'] whitespace-pre-line transition-colors duration-500 ease-in-out`}
               dangerouslySetInnerHTML={{
                 __html: renderBoldText(item.description),
               }}

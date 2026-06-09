@@ -3,40 +3,7 @@ import {usePointerGlow} from "../../hooks/usePointerGlow";
 import AIHumanFace from "../../assets/images/ai-agent/AIHumanFace.png";
 import BlackWhatAreAiAgentImage from "../../assets/images/ai-agent/BlackWhatAreAiAgent.png";
 import WhatAreAiAgentImage from "../../assets/images/ai-agent/WhatAreAiAgent.png";
-
-const marketingSteps = [
-  {
-    title: "AI agent gathers data:",
-    body: "On a weekly basis, the agent autonomously gathers and joins marketing data via connected data pipelines.",
-  },
-  {
-    title: "AI agent gathers data:",
-    body: "On a weekly basis, the agent autonomously gathers and joins marketing data via connected data pipelines.",
-  },
-  {
-    title: "AI agent analyzes performance:",
-    body: "The agent performs contextual analysis on the data to understand campaign performance metrics and compare against expectations, receiving business context from an operator when necessary.",
-  },
-  {
-    title: "AI agent updates platforms:",
-    body: "When given human approval, the agent updates media buying platforms with the recommendations.",
-  },
-];
-
-const workSteps = [
-  {
-    title: "Observe:",
-    body: "AI agents constantly collect and process information from their environment including user interactions, key performance metrics, or sensor data. They can retain memory across conversations, which provides ongoing context across multi-step plans and operations.",
-  },
-  {
-    title: "Plan:",
-    body: "Using language models, AI agents autonomously evaluate and prioritize actions based on their understanding of the problem to be addressed, goals to be accomplished, context, and memory.",
-  },
-  {
-    title: "Act:",
-    body: "AI agents leverage interfaces with enterprise systems, tools, and data sources to perform tasks. Tasks are governed by the plan delivered by a large language model or small language model. To execute tasks, the AI agent may access enterprise services (such as HR systems, order management systems, or CRMs), delegate actions to other AI agents, or ask the user for clarification. These intelligent software agents have the ability to detect errors, fix them, and learn through multi-step plans and internal checks.",
-  },
-];
+import {aiAgentContent, marketingSteps, workSteps} from "./data";
 
 function Bullet() {
   return (
@@ -100,11 +67,10 @@ function AiAgent() {
       <div className="flex w-full flex-col items-start justify-center gap-8">
         <section className="flex w-full flex-col items-start gap-2">
           <h1 className={`font-['Gotham'] text-5xl font-normal ${textColor}`}>
-            AI Agent
+            {aiAgentContent.title}
           </h1>
           <p className={`w-full font-['Gotham'] text-2xl ${textColor}`}>
-            We leverage the advances in disruptive technologies to enhance
-            business.
+            {aiAgentContent.subtitle}
           </p>
         </section>
 
@@ -118,32 +84,15 @@ function AiAgent() {
         </section>
 
         <p className={`w-full font-['Gotham'] text-2xl leading-[1.25] ${textColor}`}>
-          Imagine a teammate that works tirelessly, learns continuously, and
-          adapts to your needs. That&rsquo;s the promise of AI agents. With the
-          ability to observe, plan, and act autonomously, AI agents open a new
-          chapter of end-to-end transformation across industries&mdash;streamlining
-          processes, driving data insights, and augmenting human potential like
-          never before.
+          {aiAgentContent.introduction}
         </p>
 
         <section className="flex w-full flex-col items-start gap-4">
           <h2 className={`w-full font-['Gotham'] text-5xl ${textColor}`}>
-            What Are AI Agents?
+            {aiAgentContent.definitionTitle}
           </h2>
-          <p className={`w-full font-['Gotham'] text-2xl leading-[1.25] ${textColor}`}>
-            Put simply, AI agents are artificial intelligence that use tools to
-            accomplish goals. AI agents have the ability to remember across
-            tasks and changing states; they can use one or more AI models to
-            complete tasks; and they can decide when to access internal or
-            external systems on a user&rsquo;s behalf. This enables AI agents to
-            make decisions and take actions autonomously with minimal human
-            oversight.
-            <br />
-            For example, a consumer goods company wanted to optimize its global
-            marketing campaigns using an AI agent to transform processes. A
-            project that once required six analysts per week now required a
-            single employee working with an agent, delivering results in under
-            an hour. Here&rsquo;s how it works:
+          <p className={`w-full whitespace-pre-line font-['Gotham'] text-2xl leading-[1.25] ${textColor}`}>
+            {aiAgentContent.definition}
           </p>
         </section>
 
@@ -183,12 +132,10 @@ function AiAgent() {
 
         <section className="flex w-full flex-col items-start gap-4">
           <h2 className={`w-full font-['Gotham'] text-5xl ${textColor}`}>
-            How Do AI Agents Work?
+            {aiAgentContent.workTitle}
           </h2>
           <p className={`w-full font-['Gotham'] text-2xl leading-[1.25] ${textColor}`}>
-            AI agents observe their environment, leverage large language models
-            for planning, and access connected systems to take action and
-            accomplish goals.
+            {aiAgentContent.workIntroduction}
           </p>
 
           {workSteps.map((step) => (
@@ -201,10 +148,7 @@ function AiAgent() {
           ))}
 
           <p className={`w-full font-['Gotham'] text-2xl leading-[1.25] ${textColor}`}>
-            This observe-plan-act cycle is self-reinforcing because AI agent
-            tools continuously analyze how the world has changed based on past
-            interactions and learn how to be more efficient and effective over
-            time.
+            {aiAgentContent.workConclusion}
           </p>
         </section>
       </div>

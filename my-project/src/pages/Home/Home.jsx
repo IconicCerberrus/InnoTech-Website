@@ -1,17 +1,17 @@
-import FirstPage from "./sections/FirstPage";
-import EcosystemSection from "./sections/EcosystemSection";
-import LatestNews from "./sections/LatestNews";
-import LIVEINSIGHTS from "./sections/LiveInsights";
-import Map from "./sections/Map";
+import HeroSection from "./sections/hero/HeroSection";
+import EcosystemSection from "./sections/ecosystem/EcosystemSection";
+import LatestNewsSection from "./sections/latest-news/LatestNewsSection";
+import LiveInsightsSection from "./sections/live-insights/LiveInsightsSection";
+import GlobalFootprintSection from "./sections/global-footprint/GlobalFootprintSection";
 
 function Home() {
   return (
     <>
-      <FirstPage />
+      <HeroSection />
       <EcosystemSection />
-      <LatestNews />
-      <LIVEINSIGHTS />
-      <Map />
+      <LatestNewsSection />
+      <LiveInsightsSection />
+      <GlobalFootprintSection />
     </>
   );
 }

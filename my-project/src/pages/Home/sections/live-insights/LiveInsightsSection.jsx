@@ -1,14 +1,13 @@
 import {Link} from "react-router-dom";
-import ReadMoreLink from "../../../components/ui/ReadMoreLink";
-import {useTheme} from "../../../context/useTheme";
-import {routes} from "../../../routes";
-import HealthImage from "../../../assets/images/industries/health/health1.png";
-import EnergyAndMaterialsImage from "../../../assets/images/industries/energy-and-materials/energyandmaterials1.png";
-import MetalsAndMiningImage from "../../../assets/images/industries/metals-and-mining/metalsandmining1.png";
-import {usePointerGlow} from "../../../hooks/usePointerGlow";
+import ReadMoreLink from "../../../../components/ui/ReadMoreLink";
+import {useTheme} from "../../../../context/useTheme";
+import {routes} from "../../../../routes";
+import {usePointerGlow} from "../../../../hooks/usePointerGlow";
+import {liveInsights} from "./data";
 
-function HowWeThink() {
+function LiveInsightsSection() {
   const {isDarkMode} = useTheme();
+  const [featuredInsight, topInsight, bottomInsight] = liveInsights.cards;
 
   const {position: pos1, handlers: glow1} = usePointerGlow();
   const {position: pos2, handlers: glow2} = usePointerGlow();
@@ -29,7 +28,7 @@ function HowWeThink() {
               isDarkMode ? "text-white" : "text-black"
             }`}
           >
-            LIVE INSIGHTS
+            {liveInsights.title}
           </div>
         </div>
 
@@ -66,8 +65,8 @@ function HowWeThink() {
               {...glow1}
             >
               <img
-                src={HealthImage}
-                alt="How We Think"
+                src={featuredInsight.image}
+                alt={featuredInsight.imageAlt}
                 className="w-full h-96 object-cover"
               />
 
@@ -77,7 +76,7 @@ function HowWeThink() {
                     isDarkMode ? "text-white" : "text-black"
                   }`}
                 >
-                  AI-Driven Drug Discovery
+                  {featuredInsight.title}
                 </div>
 
                 <div className="inline-flex items-center gap-8">
@@ -86,10 +85,10 @@ function HowWeThink() {
                       isDarkMode ? "text-white" : "text-black"
                     }`}
                   >
-                    June 1, 2026
+                    {featuredInsight.date}
                   </div>
                   <div className="text-[#37B478] text-base font-['Gotham']">
-                    2 minutes read
+                    {featuredInsight.readTime}
                   </div>
                 </div>
 
@@ -98,11 +97,7 @@ function HowWeThink() {
                     isDarkMode ? "text-white" : "text-black"
                   }`}
                 >
-                  Inventions combining AI and biotechnology have grown
-                  significantly in recent years. Specifically, the number of
-                  inventions in this field has increased twelvefold over the
-                  past 20 years, far outpacing the general growth rate across
-                  all other technology sectors.
+                  {featuredInsight.description}
                 </div>
 
                 <ReadMoreLink isDarkMode={isDarkMode} />
@@ -143,18 +138,17 @@ function HowWeThink() {
                 {...glow2}
               >
                 <img
-                  src={EnergyAndMaterialsImage}
-                  alt="Hydrogen Generation from Natural Gas"
+                  src={topInsight.image}
+                  alt={topInsight.imageAlt}
                   className="h-full w-[45%] shrink-0 object-cover"
                 />
                 <div className="flex min-w-0 flex-1 flex-col justify-center gap-2 self-stretch px-5 py-4">
                   <div
-                    className={`text-3xl font-medium font-['Gotham'] leading-[1.2] transition-colors duration-500 ease-in-out ${
+                    className={`whitespace-pre-line text-3xl font-medium font-['Gotham'] leading-[1.2] transition-colors duration-500 ease-in-out ${
                       isDarkMode ? "text-white" : "text-black"
                     }`}
                   >
-                    Hydrogen Generation
-                    <br /> from Natural Gas
+                    {topInsight.title}
                   </div>
                   <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
                     <div
@@ -162,10 +156,10 @@ function HowWeThink() {
                         isDarkMode ? "text-white" : "text-black"
                       }`}
                     >
-                      June 1, 2026
+                      {topInsight.date}
                     </div>
                     <div className="text-sm font-['Gotham'] text-[#37B478]">
-                      2 minutes read
+                      {topInsight.readTime}
                     </div>
                   </div>
                   <div
@@ -173,10 +167,7 @@ function HowWeThink() {
                       isDarkMode ? "text-white" : "text-black"
                     }`}
                   >
-                    The Hydrogen Generation from Natural Gas Patent Landscape
-                    Report provides an in-depth patent landscape analysis,
-                    covering 3,006 patents from 2010 to 2026, collected across
-                    major global jurisdictions.
+                    {topInsight.description}
                   </div>
 
                   <ReadMoreLink isDarkMode={isDarkMode} />
@@ -215,8 +206,8 @@ function HowWeThink() {
                 {...glow3}
               >
                 <img
-                  src={MetalsAndMiningImage}
-                  alt="Smart Carbon Technology"
+                  src={bottomInsight.image}
+                  alt={bottomInsight.imageAlt}
                   className="h-full w-[45%] shrink-0 object-cover"
                 />
                 <div className="flex min-w-0 flex-1 flex-col justify-center gap-2 self-stretch px-5 py-4">
@@ -225,7 +216,7 @@ function HowWeThink() {
                       isDarkMode ? "text-white" : "text-black"
                     }`}
                   >
-                    Smart Carbon Technology
+                    {bottomInsight.title}
                   </div>
                   <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
                     <div
@@ -233,10 +224,10 @@ function HowWeThink() {
                         isDarkMode ? "text-white" : "text-black"
                       }`}
                     >
-                      June 1, 2026
+                      {bottomInsight.date}
                     </div>
                     <div className="text-sm font-['Gotham'] text-[#37B478]">
-                      2 minutes read
+                      {bottomInsight.readTime}
                     </div>
                   </div>
                   <div
@@ -244,9 +235,7 @@ function HowWeThink() {
                       isDarkMode ? "text-white" : "text-black"
                     }`}
                   >
-                    InnotechCo introduced INCEPTION, processes, run maturity
-                    assessments, and connect AI agents to real business
-                    workflows.
+                    {bottomInsight.description}
                   </div>
 
                   <ReadMoreLink isDarkMode={isDarkMode} />
@@ -267,7 +256,7 @@ function HowWeThink() {
                 isDarkMode ? "text-white" : "text-black"
               }`}
             >
-              Read all insights
+              {liveInsights.ctaLabel}
             </div>
             <div className="mt-1 h-[2px] w-0 bg-[#37B478] rounded-full transition-all duration-300 group-hover:w-full" />
           </Link>
@@ -277,4 +266,4 @@ function HowWeThink() {
   );
 }
 
-export default HowWeThink;
+export default LiveInsightsSection;
