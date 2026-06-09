@@ -23,6 +23,7 @@ function InnoCard({title, subtitle, items = []}) {
     INLEARN: InlearnIcon,
   };
 
+  
   const CurrentIcon = iconMap[title];
 
   const boldKeywords = [
