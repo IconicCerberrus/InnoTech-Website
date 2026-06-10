@@ -40,7 +40,7 @@ function ShowcaseCard({
           isDarkMode ? "bg-[#050505]" : "bg-white"
         }`}
       >
-        <img
+        <img loading="lazy"
           className="pointer-events-none absolute left-[-34px] top-[-72px] h-[242px] w-[234px] rotate-[10deg] opacity-100"
           src={isDarkMode ? excludeShape : excludeBlackShape}
           alt=""

@@ -40,7 +40,7 @@ function EcosystemCard({
           isDarkMode ? "bg-[#050505]" : "bg-white"
         }`}
       >
-        <img
+        <img loading="lazy"
           className="pointer-events-none absolute left-[-34px] top-[-72px] h-[242px] w-[234px] rotate-[10deg] opacity-100"
           src={isDarkMode ? excludeShape : excludeBlackShape}
           alt=""
@@ -48,7 +48,7 @@ function EcosystemCard({
         />
         <div className="relative z-10 flex w-full items-end justify-between gap-4">
           <div className="relative size-[80px] top-[-27px] shrink-0 overflow-hidden rounded-bl-[25px] rounded-br-[100px] rounded-tl-[25px] rounded-tr-[100px]">
-            <img
+            <img loading="lazy"
               className={`block size-full object-contain ${imageClassName}`}
               src={image}
               alt=""

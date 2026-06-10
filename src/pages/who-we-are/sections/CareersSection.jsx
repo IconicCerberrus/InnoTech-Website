@@ -30,7 +30,7 @@ function CareersSection({image, invertedTextColor, inverseCardBackground}) {
           </button>
         </div>
         <div className="flex w-[496px] items-end justify-end self-stretch overflow-hidden">
-          <img
+          <img loading="lazy"
             src={image}
             alt=""
             aria-hidden

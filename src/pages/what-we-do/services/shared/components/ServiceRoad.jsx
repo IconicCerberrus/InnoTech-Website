@@ -98,7 +98,7 @@ function ServiceRoad({title, items}) {
                 lineVisible ? "w-[1164px]" : "w-0"
               }`}
             >
-              <img
+              <img loading="lazy"
                 src={roadLine}
                 alt=""
                 aria-hidden

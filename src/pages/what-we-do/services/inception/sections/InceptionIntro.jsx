@@ -20,13 +20,13 @@ function Inception() {
     <main
       className={`relative flex min-h-screen w-full items-center justify-center overflow-hidden px-6 pt-28 ${pageBg}`}
     >
-      <img
+      <img loading="lazy"
         src={leftExcludeImage}
         alt=""
         aria-hidden
         className="pointer-events-none absolute left-[-160px] top-1/2 z-10 h-[min(850px,110vh)] max-w-none -translate-y-1/2 select-none md:left-[0px]"
       />
-      <img
+      <img loading="lazy"
         src={rightExcludeImage}
         alt=""
         aria-hidden
@@ -34,7 +34,7 @@ function Inception() {
       />
 
       <section className="relative z-20 flex w-[min(466px,calc(100vw-48px))] flex-col items-center justify-start gap-4 text-center">
-        <img
+        <img loading="lazy"
           src={inceptionIcon}
           alt=""
           aria-hidden

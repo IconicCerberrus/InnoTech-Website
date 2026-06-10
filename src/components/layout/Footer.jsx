@@ -25,7 +25,7 @@ const Footer = ({
       } ${topSpacingClassName} z-20`}
     >
       <div className="relative w-full">
-        <img
+        <img loading="lazy"
           src={isLightMode ? FooterSVGDark : FooterSVG}
           alt="Footer Background"
           className="w-full h-auto block transition-opacity duration-500 ease-in-out"
@@ -34,7 +34,7 @@ const Footer = ({
         {/* Brand lockup and contact action */}
         <div className="absolute inset-0 flex items-center justify-between px-[150px] mb-35">
           <div>
-            <img
+            <img loading="lazy"
               src={isLightMode ? FooterInnoTechDark : FooterInnoTech}
               alt="InnoTech Logo"
               className="w-[125px] h-auto transition-opacity duration-500 ease-in-out"
@@ -88,21 +88,21 @@ const Footer = ({
               {/* Social links */}
               <div className="flex justify-end items-center gap-5">
                 <div className="size-8 relative cursor-pointer hover:scale-110 transition-transform">
-                  <img
+                  <img loading="lazy"
                     src={isLightMode ? InstagramDark : Instagram}
                     alt="Instagram"
                     className="w-full h-full object-contain transition-opacity duration-500 ease-in-out"
                   />
                 </div>
                 <div className="size-8 relative cursor-pointer hover:scale-110 transition-transform">
-                  <img
+                  <img loading="lazy"
                     src={isLightMode ? LinkedInDark : LinkedIn}
                     alt="LinkedIn"
                     className="w-full h-full object-contain transition-opacity duration-500 ease-in-out"
                   />
                 </div>
                 <div className="size-8 relative cursor-pointer hover:scale-110 transition-transform">
-                  <img
+                  <img loading="lazy"
                     src={isLightMode ? WhatsAppDark : WhatsApp}
                     alt="WhatsApp"
                     className="w-full h-full object-contain transition-opacity duration-500 ease-in-out"

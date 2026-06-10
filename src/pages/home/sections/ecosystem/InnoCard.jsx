@@ -107,7 +107,7 @@ function InnoCard({title, subtitle, items = []}) {
       <div className="flex flex-col justify-start items-center gap-4">
         <div className="inline-flex justify-start items-center gap-3">
           <div className="size-9 relative overflow-hidden shrink-0 transition-all duration-500 ease-in-out">
-            <img
+            <img loading="lazy"
               src={CurrentIcon}
               alt={`${title} Icon`}
               className={`size-9 object-contain transition-all duration-500 ease-in-out ${iconFilter}`}

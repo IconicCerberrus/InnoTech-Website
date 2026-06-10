@@ -29,7 +29,7 @@ function ArchiveCard({item, isDarkMode}) {
         }`}
       >
         <div className="h-40 overflow-hidden">
-          <img
+          <img loading="lazy"
             src={HowWeThinkImage}
             alt=""
             aria-hidden

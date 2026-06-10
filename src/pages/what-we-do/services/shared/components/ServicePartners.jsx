@@ -29,7 +29,7 @@ function PartnerCard({partner, isDarkMode}) {
       title={partner.name}
     >
       <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-center transition-all duration-300 ease-out group-hover:right-11 group-hover:-translate-x-1 group-hover:scale-90">
-        <img
+        <img loading="lazy"
           src={partner.image}
           alt={partner.name}
           className="max-h-14 max-w-[137px] object-contain"

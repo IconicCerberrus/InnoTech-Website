@@ -75,7 +75,7 @@ function AiAgent() {
         </section>
 
         <section className="relative flex h-96 w-full flex-col items-center justify-center gap-2.5 overflow-hidden rounded-[50px] bg-white">
-          <img
+          <img loading="lazy"
             src={AIHumanFace}
             alt=""
             aria-hidden
@@ -121,7 +121,7 @@ function AiAgent() {
 
         <HoverFrame className="w-full">
           <section className="flex w-full flex-col items-center justify-center gap-2.5 overflow-hidden rounded-[50px] bg-white">
-          <img
+          <img loading="lazy"
             src={whatAreAiAgentImage}
             alt=""
             aria-hidden

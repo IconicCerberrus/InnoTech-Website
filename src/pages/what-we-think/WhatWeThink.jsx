@@ -28,7 +28,7 @@ function ArticleCopy({card, metaLayout = "stack", isDarkMode}) {
 function ImagePane({card}) {
   return (
     <div className="what-we-think-image">
-      <img src={card.image} alt="" aria-hidden="true" />
+      <img loading="lazy" src={card.image} alt="" aria-hidden="true" />
     </div>
   );
 }
@@ -78,13 +78,13 @@ function WhatWeThink() {
 
   return (
     <main className={`what-we-think-page ${isDarkMode ? "is-dark" : "is-light"}`}>
-      <img
+      <img loading="lazy"
         src={leftExclude}
         alt=""
         aria-hidden="true"
         className="what-we-think-decoration what-we-think-decoration--left -translate-y-45"
       />
-      <img
+      <img loading="lazy"
         src={rightExclude}
         alt=""
         aria-hidden="true"

@@ -137,7 +137,7 @@ function HistorySection({image, textColor}) {
           isHistoryDragging ? "cursor-grabbing" : "cursor-grab"
         }`}
       >
-        <img
+        <img loading="lazy"
           src={image}
           alt=""
           aria-hidden

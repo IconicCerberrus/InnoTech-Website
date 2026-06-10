@@ -64,3 +64,70 @@ test("theme contract exposes light and dark mode", () => {
   assert.match(provider, /toggleTheme/);
   assert.match(provider, /setIsDarkMode/);
 });
+
+test("large interactive surfaces stay split into focused components", () => {
+  const navbar = fs.readFileSync(
+    path.join(srcRoot, "components", "layout", "Navbar.jsx"),
+    "utf8",
+  );
+  const contactModal = fs.readFileSync(
+    path.join(srcRoot, "components", "modals", "ContactModal.jsx"),
+    "utf8",
+  );
+
+  assert.match(navbar, /NavbarMainBar/);
+  assert.match(navbar, /NavbarPanels/);
+  assert.match(contactModal, /ContactFormFields/);
+  assert.ok(navbar.split("\n").length < 180);
+  assert.ok(contactModal.split("\n").length < 260);
+});
+
+test("non-critical content images use native lazy loading", () => {
+  const eagerImageFiles = new Set([
+    path.join(srcRoot, "components", "layout", "Navbar.jsx"),
+    path.join(srcRoot, "components", "layout", "navbar", "NavbarMainBar.jsx"),
+    path.join(srcRoot, "pages", "home", "sections", "hero", "HeroSection.jsx"),
+    path.join(srcRoot, "pages", "inlearn-academy", "InlearnAcademy.jsx"),
+    path.join(
+      srcRoot,
+      "pages",
+      "who-we-are",
+      "components",
+      "WhoWeAreBackground.jsx",
+    ),
+    path.join(
+      srcRoot,
+      "pages",
+      "what-we-do",
+      "industries",
+      "shared",
+      "components",
+      "IndustryHero.jsx",
+    ),
+  ]);
+
+  for (const file of sourceFiles.filter((file) => file.endsWith(".jsx"))) {
+    if (eagerImageFiles.has(file)) continue;
+
+    const source = fs.readFileSync(file, "utf8");
+    for (const imageTag of source.matchAll(/<img\b[^>]*>/gs)) {
+      assert.match(
+        imageTag[0],
+        /loading="lazy"/,
+        `${path.relative(root, file)} has a non-lazy content image`,
+      );
+    }
+  }
+});
+
+test("Gotham is self-hosted without an external font dependency", () => {
+  const css = fs.readFileSync(path.join(srcRoot, "index.css"), "utf8");
+  const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
+  const localFont = path.join(root, "public", "fonts", "GothamRegular.woff");
+
+  assert.equal(fs.existsSync(localFont), true);
+  assert.match(css, /@font-face/);
+  assert.match(css, /url\("\/fonts\/GothamRegular\.woff"\)/);
+  assert.doesNotMatch(css, /https?:\/\/.*font/i);
+  assert.match(html, /rel="preload"[\s\S]*GothamRegular\.woff/);
+});

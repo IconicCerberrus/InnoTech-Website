@@ -64,7 +64,7 @@ function LiveInsightsSection() {
               }`}
               {...glow1}
             >
-              <img
+              <img loading="lazy"
                 src={featuredInsight.image}
                 alt={featuredInsight.imageAlt}
                 className="w-full h-96 object-cover"
@@ -137,7 +137,7 @@ function LiveInsightsSection() {
                 }`}
                 {...glow2}
               >
-                <img
+                <img loading="lazy"
                   src={topInsight.image}
                   alt={topInsight.imageAlt}
                   className="h-full w-[45%] shrink-0 object-cover"
@@ -205,7 +205,7 @@ function LiveInsightsSection() {
                 }`}
                 {...glow3}
               >
-                <img
+                <img loading="lazy"
                   src={bottomInsight.image}
                   alt={bottomInsight.imageAlt}
                   className="h-full w-[45%] shrink-0 object-cover"

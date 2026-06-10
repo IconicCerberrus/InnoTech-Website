@@ -42,7 +42,7 @@ function GlobalFootprintSection() {
 
       {/* ================= MAP IMAGE ================= */}
       <div className="w-full flex justify-center">
-        <img
+        <img loading="lazy"
           src={isDarkMode ? MapImage : MapLightImage}
           alt={globalFootprint.imageAlt}
           className="w-full max-w-[1100px] object-contain transition-opacity duration-500 ease-in-out"

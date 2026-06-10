@@ -28,7 +28,7 @@ function IntroSection({image, textColor}) {
         </div>
 
         <div className="relative size-96 shrink-0 overflow-hidden rounded-[50px]">
-          <img
+          <img loading="lazy"
             src={image}
             alt=""
             aria-hidden

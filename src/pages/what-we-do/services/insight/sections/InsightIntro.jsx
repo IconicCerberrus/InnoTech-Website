@@ -14,7 +14,7 @@ function InsightIntro() {
     <main
       className={`relative flex min-h-screen w-full items-center justify-center overflow-visible px-6 pt-28 ${pageBg}`}
     >
-      <img
+      <img loading="lazy"
         src={excludeImage}
         alt=""
         aria-hidden
@@ -22,7 +22,7 @@ function InsightIntro() {
       />
 
       <section className="relative z-20 flex w-[min(466px,calc(100vw-48px))] flex-col items-center justify-start gap-4 text-center">
-        <img
+        <img loading="lazy"
           src={insightIcon}
           alt=""
           aria-hidden

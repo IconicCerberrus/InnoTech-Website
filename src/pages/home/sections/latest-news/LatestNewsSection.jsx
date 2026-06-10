@@ -81,7 +81,7 @@ function LatestNewsSection() {
 
           {/* Featured image */}
           <div className="w-full lg:w-[496px] shrink-0 self-stretch overflow-hidden">
-            <img
+            <img loading="lazy"
               src={LatestNewsImage}
               alt="Latest news"
               className="h-full w-full object-cover lg:min-h-[640px]"

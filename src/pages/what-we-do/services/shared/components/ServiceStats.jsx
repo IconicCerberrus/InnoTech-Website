@@ -100,26 +100,26 @@ function ServiceStats({stats}) {
       ref={sectionRef}
       className={`relative h-[517px] w-full overflow-hidden ${pageBg}`}
     >
-      <img
+      <img loading="lazy"
         src={unionImage}
         alt=""
         aria-hidden
         className="pointer-events-none absolute bottom-0 left-1/2 z-10 h-[513px] w-[134%] max-w-none -translate-x-1/2 select-none"
       />
 
-      <img
+      <img loading="lazy"
         src={leftImage}
         alt=""
         aria-hidden
         className="pointer-events-none absolute left-[-100px] top-[-40px] z-20 h-[637px] w-auto max-w-none rotate-[20deg] select-none"
       />
-      <img
+      <img loading="lazy"
         src={middleImage}
         alt=""
         aria-hidden
         className="pointer-events-none absolute left-[750px] top-[-580px] z-20 h-[1275px] w-auto max-w-none rotate-[9deg] select-none"
       />
-      <img
+      <img loading="lazy"
         src={rightImage}
         alt=""
         aria-hidden

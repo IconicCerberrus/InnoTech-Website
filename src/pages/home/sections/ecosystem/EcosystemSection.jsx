@@ -14,7 +14,7 @@ function EcosystemSection() {
       className={`relative w-full ${isDarkMode ? "bg-black" : "bg-white"}`}
     >
       <div className="-mt-20 relative z-10 w-full overflow-x-hidden">
-        <img
+        <img loading="lazy"
           src={isDarkMode ? ellipseBlack : ellipseWhite}
           alt="Ellipse Background"
           className="w-full block"
@@ -24,7 +24,7 @@ function EcosystemSection() {
       <div className="relative z-20 mt-[-38%] lg:mt-[-33%] pb-28">
         <div className="flex justify-center pb-16 px-4">
           <div className="overflow-hidden max-h-137.5">
-            <img
+            <img loading="lazy"
               src={isDarkMode ? InnotechEcopic : InnotechEcopicLight}
               alt="Innotech Ecosystem"
               className="w-auto h-auto max-w-[90vw] object-contain"

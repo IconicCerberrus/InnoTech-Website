@@ -38,12 +38,12 @@ function ReportStoreCard() {
           </button>
 
           <div className="mt-auto flex w-full items-center justify-center gap-14">
-            <img
+            <img loading="lazy"
               src={randMLogo}
               alt="R and M"
               className="relative z-10 h-16 w-auto max-w-[180px] object-contain transition-all duration-300 ease-out hover:z-20 hover:-translate-y-2 hover:scale-110"
             />
-            <img
+            <img loading="lazy"
               src={marketResearchLogo}
               alt="Market Research"
               className="relative z-10 h-16 w-auto max-w-[180px] object-contain transition-all duration-300 ease-out hover:z-20 hover:-translate-y-2 hover:scale-110"
@@ -51,7 +51,7 @@ function ReportStoreCard() {
           </div>
         </div>
         <div className="flex w-[496px] items-end justify-end self-stretch overflow-hidden">
-          <img
+          <img loading="lazy"
             src={careersImage}
             alt=""
             aria-hidden

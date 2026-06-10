@@ -97,7 +97,7 @@ function LiveInsightsSection({title, cards, alt}) {
         isDarkMode ? "bg-black" : "bg-white"
       }`}
     >
-      <img
+      <img loading="lazy"
         src={insightExclude}
         alt=""
         aria-hidden
@@ -113,7 +113,7 @@ function LiveInsightsSection({title, cards, alt}) {
           <GlowCard className="h-[702px] min-w-0" isDarkMode={isDarkMode}>
             <div className="flex size-full flex-col">
               <div className="min-h-0 flex-1 overflow-hidden">
-                <img
+                <img loading="lazy"
                   src={featuredCard.image}
                   alt={alt}
                   className={`size-full object-cover object-bottom   ${
@@ -134,7 +134,7 @@ function LiveInsightsSection({title, cards, alt}) {
               >
                 <div className="flex size-full min-w-0 flex-col items-center md:grid md:grid-cols-2">
                   <div className="h-1/2 w-full min-w-0 overflow-hidden md:size-full">
-                    <img
+                    <img loading="lazy"
                       src={card.image}
                       alt=""
                       aria-hidden

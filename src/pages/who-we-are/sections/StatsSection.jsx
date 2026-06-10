@@ -44,7 +44,7 @@ function StatCard({stat, isVisible, isDarkMode}) {
           : "translate-y-7 opacity-0 blur-sm"
       }`}
     >
-      <img
+      <img loading="lazy"
         src={stat.icon}
         alt=""
         aria-hidden

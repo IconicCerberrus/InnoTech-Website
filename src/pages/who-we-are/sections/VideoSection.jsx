@@ -11,7 +11,7 @@ function VideoSection({icon, isDarkMode}) {
           aria-label="Play video"
           className="inline-flex size-24 items-center justify-center transition-transform duration-200 hover:scale-105 active:scale-95"
         >
-          <img src={icon} alt="" aria-hidden className="size-full" />
+          <img loading="lazy" src={icon} alt="" aria-hidden className="size-full" />
         </button>
       </div>
     </section>
